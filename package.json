@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "Shay Proctor, Imad Ottallah, Kenneth Chittaphong, Emily Stroud",
+  "author": "Shay Proctor, Imad Otallah, Kenneth Chittaphong, Emily Stroud",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",
