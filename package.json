@@ -1,7 +1,7 @@
 {
-  "name": "webpack-5.0-template",
+  "name": "pizza_and_wangs",
   "version": "1.0.0",
-  "description": "pizza_and_wangs",
+  "description": "",
   "main": "src/scripts/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
