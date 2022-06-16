@@ -11,6 +11,7 @@ const checkLoginStatus = () => {
     if (user) {
       startApp(user);
       // person is logged in do something...
+      startApp();
       logoutButton();
     } else {
       // person is NOT logged in
