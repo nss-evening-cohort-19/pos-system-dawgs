@@ -1,4 +1,4 @@
-const startApp = (user) => {
+const startApp = () => {
 };
 
 export default startApp;
