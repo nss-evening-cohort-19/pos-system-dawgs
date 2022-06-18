@@ -23,8 +23,8 @@ const orderFormOnDom = (order = {}) => {
       <select id="orderType" class="form-select" aria-label="Default select example">
         <label for="orderType" class="form-label">Order Type</label>
         <option selected>Select An Order Type</option>
-        <option value="Phone">One</option>
-        <option value="In-Person">Two</option>
+        <option value="Phone">Phone</option>
+        <option value="In-Person">In-Person</option>
       </select>
       <button type="submit" class="btn btn-primary mt-3">Create/Edit Order</button>
     </div>

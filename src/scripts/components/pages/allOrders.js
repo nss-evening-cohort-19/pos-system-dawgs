@@ -11,7 +11,7 @@ const orderCardsOnDom = (array) => {
     let domString = '';
     array.forEach((order) => {
       domString += `
-      <div class="card" style="width: 18rem;">
+<div id="order-cards" class="card" style="width: 18rem">
   <div class="card-body">
     <h4 class="card-title">${order.name}</h4>
     <h6 class="card-text">${order.status}</h6>
