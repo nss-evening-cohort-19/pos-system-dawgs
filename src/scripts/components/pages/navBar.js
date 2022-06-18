@@ -5,7 +5,7 @@ const navBar = () => {
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-4">
   <div class="navbar-collapse" id="navbarNav">
   <a id="home" href="#">
-    <img class="nav-logo" src="https://raw.githubusercontent.com/nss-evening-cohort-19/pos-system-dawgs/main/instructions/hhpw-record.png" alt="pizza-logo">
+    <img class="nav-logo" src="" alt="pizza-logo">
   </a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">

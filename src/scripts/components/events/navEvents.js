@@ -1,7 +1,8 @@
 import signOut from '../../helpers/signOut';
 import homeLogedIn from '../pages/homeLoggedIn';
+// import { getOrders } from '../../../api/orderData';
 
-const navEvents = (uid) => {
+const navEvents = () => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button').addEventListener('click', signOut);
 
@@ -9,7 +10,7 @@ const navEvents = (uid) => {
   document.querySelector('#home').addEventListener('click', homeLogedIn);
 
   // VIEW ORDER
-  document.querySelector('#view-order').addEventListener('click', () => {
+  /* document.querySelector('#view-order').addEventListener('click', () => {
     getOrders(uid).then(showOrders);
   });
 
@@ -23,7 +24,7 @@ const navEvents = (uid) => {
     e.preventDefault();
     const searchValue = document.querySelector('#search-value').ariaValueMax.toLowerCase();
     searchOrders(searchValue, uid).then(showOrders);
-  });
+  }); */
 };
 
 export default navEvents;
