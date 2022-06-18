@@ -1,32 +1,32 @@
 {
   "-MiBsfuTafbEQ7eAULxV" : {
-    "name" : "ta@ta.com",
+    "name" : "pizza",
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "price" : "Tomi",
+    "price" : "$10.00",
     "uid": ""
   },
   "-MiBt86VzkC-EGmJnxjm" : {
-    "name" : "ta@ta.com",
+    "name" : "wings",
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "price" : "Tomi",
+    "price" : "$8.00",
     "uid": ""
   },
   "-MiBtwf1BwN9pGavQeR3" : {
-    "name" : "ta@ta.com",
+    "name" : "cake",
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "price" : "Tomi",
+    "price" : "$9.00",
     "uid": ""
   },
   "-MiBuOfHv9NCKB_cneij" : {
-    "name" : "ta@ta.com",
+    "name" : "shrimp",
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "price" : "Tomi",
+    "price" : "$8.00",
     "uid": ""
   },
   "-MiBulenBnY8by9Xn7q1" : {
-    "name" : "ta@ta.com",
+    "name" : "hamburger",
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "price" : "Tomi",
+    "price" : "$11.00",
     "uid": ""
   }
     
