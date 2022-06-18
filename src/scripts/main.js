@@ -4,10 +4,7 @@ import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
 
 const init = () => {
-  document.querySelector('#app').innerHTML = `
-    <h1>Welcome to Pizza & Wangz</h1>
-    <h2>Sign in to continue..</h2>
-  `;
+  console.warn('YOU ARE UP AND RUNNING!');
 
   // USE WITH FIREBASE AUTH
   checkLoginStatus();
