@@ -4,10 +4,15 @@ import homeLoggedIn from '../../components/pages/homeLoggedIn';
 // import { getOrders } from '../../../api/orderData';
 >>>>>>> main
 import navEvents from '../../components/events/navEvents';
+import paymentForm from '../../components/forms/paymentForm';
 // import orderFormOnDom from '../../components/forms/orderForm';
 import logoutButton from '../../components/logoutButton';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+import viewCart from '../../components/pages/cart';
+>>>>>>> main
 // import orderCardsOnDom from '../../components/pages/allOrders';
 // import homeLoggedIn from '../../components/pages/homeLoggedIn';
 >>>>>>> main
@@ -24,6 +29,8 @@ const startApp = (user) => {
 =======
   // homeLoggedIn();
   // orderFormOnDom();
+  paymentForm();
+  viewCart();
   logoutButton();
   navEvents(user.uid);
   // getOrders().then((orderArray) => orderCardsOnDom(orderArray));

@@ -1,0 +1,23 @@
+{
+  "payment1" : {
+    "type" : "cash", 
+    "tip": 5.00,
+    "uid" : ""
+  },
+  "payment2" : {
+    "type" : "credit",
+    "tip" : 2.50,
+    "uid" : ""
+
+  },
+  "payment3" : {
+    "type" : "credit",
+    "tip" : 10.00,
+    "uid" : ""
+  },
+  "payment4" : {
+    "type" : "credit",
+    "tip" : 6.00,
+    "uid" : ""
+  }
+}
