@@ -13,7 +13,7 @@ const showFoods = (array) => {
       domString += `
         <div class="card">
           <div class="card-body" style="height: 180px;">
-            <h5 class="card-title">${item.namw}</h5>
+            <h5 class="card-title">${item.name}</h5>
             <h5 class="card-title">${item.price}</h5>
               <hr>
               <i id="edit-food-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
