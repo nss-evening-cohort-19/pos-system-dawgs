@@ -1,8 +1,8 @@
-import clearDom from '../../helpers/utilities/clearDom';
+// import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const paymentForm = () => {
-  clearDom();
+  // clearDom();
   const domString = `
   <form id="payment">
   <select class="form-select" aria-label="Default select example">

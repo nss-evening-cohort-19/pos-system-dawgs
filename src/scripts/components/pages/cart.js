@@ -11,11 +11,14 @@ const viewCart = () => {
     </div>
   </div>
   `;
-  const buttonString = `
-    <button type="button" class="btn btn-success">Add Item</button>
-    <button type="button" class="btn btn-primary">Go To Payment</button>
-  `;
-  renderToDom('#card-container', domString, buttonString);
+  renderToDom('#card-container', domString);
+
+  // const cartButtons = () => {
+  //   const buttonString = `
+  //   <button type="button" class="btn btn-success">Add Item</button>
+  //   <button type="button" class="btn btn-primary">Go To Payment</button>
+  // `;
+  //   renderToDom('#card-container', buttonString);
 };
 
 export default viewCart;

@@ -1,15 +1,19 @@
 import navEvents from '../../components/events/navEvents';
+import paymentForm from '../../components/forms/paymentForm';
 import logoutButton from '../../components/logoutButton';
-import homeLoggedIn from '../../components/pages/homeLoggedIn';
+import viewCart from '../../components/pages/cart';
+// import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
 
 const startApp = (user) => {
   domBuilder();
   navBar();
-  homeLoggedIn();
+  // homeLoggedIn();
   logoutButton();
-  navEvents(user.uid);
+  paymentForm();
+  viewCart();
+  navEvents(user);
 };
 
 export default startApp;
