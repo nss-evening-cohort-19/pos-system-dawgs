@@ -1,12 +1,33 @@
 {
-  "-N4UYEKB5oClLIY0Tw5k": {
-    "name": "hot wings"
+  "-MiBsfuTafbEQ7eAULxV" : {
+    "name" : "ta@ta.com",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "price" : "Tomi",
+    "uid": ""
   },
-  "-N4Uat4Vg3SaH1V_haVK": {
-    "description": "southern style wings",
-    "firebaseKey": "-N4UYEKB5oClLIY0Tw5k",
-    "name": "bbq wings",
-    "price": "$8.00"
-    }
+  "-MiBt86VzkC-EGmJnxjm" : {
+    "name" : "ta@ta.com",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "price" : "Tomi",
+    "uid": ""
+  },
+  "-MiBtwf1BwN9pGavQeR3" : {
+    "name" : "ta@ta.com",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "price" : "Tomi",
+    "uid": ""
+  },
+  "-MiBuOfHv9NCKB_cneij" : {
+    "name" : "ta@ta.com",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "price" : "Tomi",
+    "uid": ""
+  },
+  "-MiBulenBnY8by9Xn7q1" : {
+    "name" : "ta@ta.com",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "price" : "Tomi",
+    "uid": ""
+  }
     
 }
