@@ -1,8 +1,8 @@
-// import clearDom from '../../helpers/utilities/clearDom';
+import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const orderFormOnDom = (order = {}) => {
-  // clearDom();
+  clearDom();
   const domstring = `
   <form id="${
   order.firebaseKey ? `update-order--${order.firebaseKey}` : 'create-order'
