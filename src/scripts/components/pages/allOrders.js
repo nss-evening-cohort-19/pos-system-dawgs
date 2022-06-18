@@ -25,7 +25,7 @@ const orderCardsOnDom = (array) => {
 </div>
       `;
     });
-    renderToDom('#add-card', domString);
+    renderToDom('#card-container', domString);
   } else {
     noOrders();
   }

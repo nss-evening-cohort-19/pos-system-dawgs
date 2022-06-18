@@ -45,3 +45,26 @@ Things to remember while coding out the project
 * [Stretch Goals 1 - Filtering the Data](./instructions/stretch-1.md)
 * [Stretch Goals 2 - Dealing with Change](./instructions/stretch-2.md)
 * [Stretch Goals 3 - Play that Funky Music](./instructions/stretch-3.md)
+
+# Hip Hop-Pizza-Wangs
+
+## Overview of the project
+
+## Wireframes/prototype 
+- https://www.figma.com/file/4y3EZddALuBR3ouSEM57Np/MVP?node-id=0%3A1
+## Deployed project
+- 
+## Project board
+- link
+## Flow Diagram & ERD
+- imgs
+## Description of the user
+- List of features
+- Screenshots of your project
+## Contributors
+- Kenneth Chittaphong (https://github.com/kennethchittaphong)
+- Imad Ottallah (https://github.com/ImadOttallah)
+- Emily Stroud (https://github.com/emilyjstroud)
+- Shalane Proctor (https://github.com/shalane-proctor)
+## Walkthrough
+Link to Loom video walkthrough(no more than 1 minute long)
