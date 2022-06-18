@@ -3,6 +3,7 @@ import navEvents from '../../components/events/navEvents';
 import paymentForm from '../../components/forms/paymentForm';
 // import orderFormOnDom from '../../components/forms/orderForm';
 import logoutButton from '../../components/logoutButton';
+import viewCart from '../../components/pages/cart';
 // import orderCardsOnDom from '../../components/pages/allOrders';
 // import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
@@ -14,6 +15,7 @@ const startApp = (user) => {
   // homeLoggedIn();
   // orderFormOnDom();
   paymentForm();
+  viewCart();
   logoutButton();
   navEvents(user.uid);
   // getOrders().then((orderArray) => orderCardsOnDom(orderArray));
