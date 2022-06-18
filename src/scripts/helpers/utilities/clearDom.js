@@ -1,5 +1,5 @@
 const clearDom = () => {
-  document.querySelector('#main-container').innerHTML = '';
+  document.querySelector('#buttons-container').innerHTML = '';
 };
 
 export default clearDom;
