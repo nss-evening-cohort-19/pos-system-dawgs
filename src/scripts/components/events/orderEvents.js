@@ -1,13 +1,65 @@
-// // *** Buttons on Order Cards ***
-// const orderDomEvents = () => {
-//   document.querySelector('#main-container').addEventListener
-//   ('click', (e) => {
-// // DETAILS
+import {
+  createOrder, deleteOrder, getSingleOrder, updateOrder
+} from '../../../api/orderData';
+import orderFormOnDom from '../forms/orderForm';
+import { orderCardsOnDom } from '../pages/allOrders';
 
-// // EDIT
+// *** Buttons on Order Cards ***
+const orderDomEvents = (uid) => {
+  document.querySelector('#main-container').addEventListener('click', (e) => {
+  // DETAILS
+  // if (e.target.id.includes('order-details-btn')) {
+  //   const [, orderFirebaseKey] = e.target.id.split('--');
+  //   viewOrderDetails(orderFirebaseKey).then((cartList) => {
+  //     viewCart(cartList);
+  //   });
+  // }
 
-// // DELETE
+    // EDIT
+    if (e.target.id.includes('update-order-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then((orderObj) => orderFormOnDom(orderObj));
+    }
 
-//   })
-// }
+    // DELETE
+    if (e.target.id.includes('delete-order-btn')) {
+      console.warn('Button clicked');
+      const [, firebaseKey] = e.target.id.split('--');
+      deleteOrder(firebaseKey, uid).then((orderArray) => orderCardsOnDom(orderArray));
+    }
+  });
+};
 // *** Orders Form Events ***
+const orderFormEvents = (uid) => {
+  const form = document.querySelector('#form-container');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // CREATE Order Form
+    if (e.target.id.includes('submit-order')) {
+      const orderObj = {
+        name: document.querySelector('#orderName').value,
+        status: 'Open',
+        phone: document.querySelector('#customerPhone').value,
+        email: document.querySelector('#customerEmail').value,
+        type: document.querySelector('#orderType').value,
+        uid
+      };
+      createOrder(orderObj).then((orderArray) => orderCardsOnDom(orderArray));
+    }
+
+    // UPDATE Order Form
+    if (e.target.id.includes('update-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const orderObject = {
+        name: document.querySelector('#orderName').value,
+        phone: document.querySelector('#customerPhone').value,
+        email: document.querySelector('#customerEmail').value,
+        type: document.querySelector('#orderType').value,
+        firebaseKey
+      };
+      updateOrder(orderObject).then(orderCardsOnDom);
+    }
+  });
+};
+
+export { orderDomEvents, orderFormEvents };

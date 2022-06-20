@@ -1,4 +1,4 @@
-// import clearDom from '../../helpers/utilities/clearDom';
+import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const noOrders = () => {
@@ -6,7 +6,7 @@ const noOrders = () => {
 };
 
 const orderCardsOnDom = (array) => {
-  // clearDom();
+  clearDom();
   if (array.length) {
     let domString = '';
     array.forEach((order) => {
@@ -18,9 +18,9 @@ const orderCardsOnDom = (array) => {
     <h6 class="card-text">${order.phone}</h6>
     <h6 class="card-text">${order.email}</h6>
     <h6 class="card-text">${order.type}</h6>
-    <button id="order-details-btn--${order.firebaseKey} class="card-link">Details</button>
-    <button id="update-order-btn--${order.firebaseKey} class="card-link">Edit</button>
-    <button id="delete-order-btn--${order.firebaseKey} class="card-link">Delete</button>
+    <button id="order-details-btn--${order.firebaseKey}" class="card-link">Details</button>
+    <button id="update-order-btn--${order.firebaseKey}" class="card-link">Edit</button>
+    <button id="delete-order-btn--${order.firebaseKey}" class="card-link">Delete</button>
   </div>
 </div>
       `;
@@ -31,4 +31,4 @@ const orderCardsOnDom = (array) => {
   }
 };
 
-export default orderCardsOnDom;
+export { orderCardsOnDom, noOrders };
