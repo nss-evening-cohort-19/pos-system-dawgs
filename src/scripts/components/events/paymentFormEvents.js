@@ -6,7 +6,8 @@ const paymentFormEvents = (uid) => {
     e.preventDefault();
 
     // CLICK EVENT FOR SUBMITTING FORM FOR PAYMENT
-    if (e.target.id.includes('submit-payment')) {
+    if (e.target.id.includes('submit')) {
+      console.warn('You clicked the submit payment button', e.target.id);
       const paymentObject = {
         type: document.querySelector('#type').value,
         tip: document.querySelector('#tip').value,
