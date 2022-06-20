@@ -22,4 +22,4 @@ const deleteOrderItems = (orderId) => new Promise((resolve, reject) => {
   });
 });
 
-export { viewOrderDetails, deleteOrderItems, viewOrderProfit }
+export { viewOrderDetails, deleteOrderItems, viewOrderProfit };
