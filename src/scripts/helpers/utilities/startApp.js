@@ -1,4 +1,4 @@
-import { getOrders } from '../../../api/orderData';
+// import { getOrders } from '../../../api/orderData';
 import { getFood } from '../../../api/foodData';
 import navEvents from '../../components/events/navEvents';
 // import addFood from '../../components/forms/foodForm';
@@ -7,13 +7,13 @@ import { showFoods } from '../../components/pages/food';
 // import paymentForm from '../../components/forms/paymentForm';
 // import orderFormOnDom from '../../components/forms/orderForm';
 // import viewCart from '../../components/pages/cart';
-import orderCardsOnDom from '../../components/pages/allOrders';
+// import orderCardsOnDom from '../../components/pages/allOrders';
 import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
 import foodDomEvents from '../../components/events/foodDomEvents';
 import foodFormEvents from '../../components/events/foodFormEvents';
-import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
+// import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
 
 const startApp = (user) => {
   domBuilder();
@@ -29,9 +29,9 @@ const startApp = (user) => {
   foodFormEvents(user.id);
   getFood().then((foodArray) => showFoods(foodArray));
   homeLoggedIn();
-  orderDomEvents(user.uid);
-  orderFormEvents(user.uid);
-  getOrders().then((orderArray) => orderCardsOnDom(orderArray));
+  // orderDomEvents(user.uid);
+  // orderFormEvents(user.uid);
+  // getOrders().then((orderArray) => orderCardsOnDom(orderArray));
 };
 
 export default startApp;
