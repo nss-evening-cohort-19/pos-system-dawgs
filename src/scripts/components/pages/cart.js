@@ -11,17 +11,17 @@ const viewCart = (array) => {
   clearDom();
   if (array.length) {
     let domString = '';
-    array.forEach((cartItem) => {
+    array.forEach((item) => {
       domString += `
-  <div class="card" style="width: 18rem;">
-   <div class="card-body">
-   <h5 class="card-title">${cartItem.name}</h5>
-   <h5 class="card-subtitle">${cartItem.price}</h5>
-    <a href="#" i id="edit-card-btn--${cartItem.firebaseKey}" class="card-link">Edit Item</a>
-    <a href="#" i id="delete-card-btn--${cartItem.firebaseKey}" class="card-link">Delete Item</a>
-    </div>
-  </div>
-  `;
+       <div class="card" style="width: 18rem;">
+         <div class="card-body">
+          <h5 class="card-title">${item.name}</h5>
+          <h5 class="card-subtitle">${item.price}</h5>
+           <a href="#" i id="edit-card-btn--${item.firebaseKey}" class="card-link">Edit Item</a>
+           <a href="#" i id="delete-card-btn--${item.firebaseKey}" class="card-link">Delete Item</a>
+          </div>
+         </div>
+      `;
     });
     renderToDom('#card-container', domString);
   } else {
