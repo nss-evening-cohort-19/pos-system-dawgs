@@ -46,12 +46,6 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 
-const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/foods/$${firebaseKey}.json`)
-    .then((response) => resolve(response.data))
-    .catch(reject);
-});
-
 export {
-  getFood, updateFood, createFood, getSingleFood
+  getFood, updateFood, createFood, getSingleFood, deleteFood
 };

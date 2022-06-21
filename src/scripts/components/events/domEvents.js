@@ -1,4 +1,4 @@
-import { getOrders } from '../../../api/orderData';
+import { createOrder, getOrders } from '../../../api/orderData';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 import viewRevenue from '../pages/revenue';
@@ -20,7 +20,20 @@ const domEvents = (uid) => {
       viewRevenue();
     }
 
-    // CLICK EVENT FOR EDITING AN ITEM
+    // CLICK EVENT FOR SUBMIT ORDER
+    if (e.target.id.includes('submit-order')) {
+      e.preventDefault();
+      console.warn('Order submitted');
+      const newOrder = {
+        customerName: document.querySelector('#orderName').value,
+        customerPhone: document.querySelector('#customerPhone').value,
+        customerEmail: document.querySelector('#customerEmail').value,
+        orderType: document.querySelector('#orderType').value,
+        uid
+      };
+
+      createOrder(newOrder).then(orderCardsOnDom);
+    }
   });
 };
 

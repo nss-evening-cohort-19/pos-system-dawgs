@@ -1,6 +1,4 @@
-// import { getFood } from '../../../api/foodData';
 import navEvents from '../../components/events/navEvents';
-// import addFood from '../../components/forms/foodForm';
 import logoutButton from '../../components/logoutButton';
 // import paymentForm from '../../components/forms/paymentForm';
 // import viewCart from '../../components/pages/cart';
@@ -13,15 +11,12 @@ import { orderFormEvents, orderDomEvents } from '../../components/events/orderEv
 const startApp = (user) => {
   domBuilder();
   navBar();
-  // addFood();
   // paymentForm();
   // viewCart();
   logoutButton();
   navEvents(user.uid);
   orderDomEvents(user.uid);
   orderFormEvents(user.uid);
-  // getFood().then((foodArray) => showFoods(foodArray));
-  homeLoggedIn();
   homeLoggedIn(user.uid);
   domEvents();
 };
