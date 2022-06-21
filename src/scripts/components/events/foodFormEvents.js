@@ -4,10 +4,9 @@ import { showFoods } from '../pages/food';
 const foodFormEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (e.target.dispatchEvent.includes('submit-food')) {
+    if (e.target.id.includes('submit-food')) {
       const foodObj = {
         name: document.querySelector('#name').value,
-        // description: document.querySelector('#description').value,
         price: document.querySelector('#price').value,
         uid,
       };
@@ -17,12 +16,11 @@ const foodFormEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       const foodObj = {
         name: document.querySelector('#name').value,
-        // description: document.querySelector('#description').value,
         price: document.querySelector('#price').value,
         firebaseKey,
-        uid
+        uid,
       };
-      updateFood(foodObj).then(showFoods);
+      updateFood(foodObj).then((foodArray) => showFoods(foodArray));
     }
   });
 };
