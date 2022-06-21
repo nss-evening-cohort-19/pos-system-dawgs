@@ -1,17 +1,21 @@
 import renderToDom from '../../helpers/utilities/renderToDom';
 
-const viewCart = () => {
-  const domString = `
+const viewCart = (array) => {
+  if (array.length) {
+    let domString = '';
+    array.forEach((item) => {
+      domString += `
   <div class="card" style="width: 18rem;">
    <div class="card-body">
     <h5 class="card-title">Item Name</h5>
     <h5 class="card-subtitle">PRICE:</h5>
-    <a href="#" class="card-link">Edit Item</a>
+    <a href="#" i id="edit-card-btn--${item.firebaseKey}" class="card-link">Edit Item</a>
     <a href="#" class="card-link">Delete Item</a></a>
     </div>
   </div>
   `;
-  renderToDom('#card-container', domString);
+    });
+    renderToDom('#card-container', domString);
 
   // const cartButtons = () => {
   //   const buttonString = `
@@ -20,6 +24,7 @@ const viewCart = () => {
   // `;
   //   renderToDom('#card-container', buttonString);
   // };
+  }
 };
 
 export default viewCart;

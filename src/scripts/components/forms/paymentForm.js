@@ -13,7 +13,7 @@ const paymentForm = (obj = {}) => {
       <option value="Check">Check</option>
     <div class="input-group mb-3">
       <span class="input-group-text">$</span>
-      <input type="text" class="form-control" aria-label="${obj.tip || ''}">
+      <input type="text" placeholder="Tip Amount" class="form-control" value="${obj.tip || ''}">
     </div>
   </select>
   <button type="submit" class="btn btn-success">Close Order
