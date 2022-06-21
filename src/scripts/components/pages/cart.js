@@ -19,6 +19,7 @@ const viewCart = () => {
   //   <button type="button" class="btn btn-primary">Go To Payment</button>
   // `;
   //   renderToDom('#card-container', buttonString);
+  // };
 };
 
 export default viewCart;

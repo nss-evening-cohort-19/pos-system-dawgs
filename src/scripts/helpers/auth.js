@@ -1,9 +1,9 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import loginButton from '../components/loginButton';
+import startApp from './utilities/startApp';
 import logoutButton from '../components/logoutButton';
 import firebaseConfig from '../../api/apiKeys';
-import startApp from './utilities/startApp';
 
 const checkLoginStatus = () => {
   firebase.initializeApp(firebaseConfig);

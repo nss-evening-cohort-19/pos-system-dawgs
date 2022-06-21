@@ -46,7 +46,7 @@ const createOrder = (orderObj) => new Promise((resolve, reject) => {
 
 // UPDATE Order
 const updateOrder = (orderObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/orders/${orderObj.firebaseKey}`, orderObj)
+  axios.patch(`${dbUrl}/orders/${orderObj.firebaseKey}.json`, orderObj)
     .then(() => getOrders().then(resolve))
     .catch(reject);
 });
