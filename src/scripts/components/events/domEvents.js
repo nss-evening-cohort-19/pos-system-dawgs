@@ -1,5 +1,7 @@
-import { createOrder, getOrders } from '../../../api/orderData';
-import orderCardsOnDom from '../pages/allOrders';
+import { getOrders } from '../../../api/orderData';
+import orderFormOnDom from '../forms/orderForm';
+import { orderCardsOnDom } from '../pages/allOrders';
+import viewRevenue from '../pages/revenue';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -10,22 +12,15 @@ const domEvents = (uid) => {
 
     // CLICK EVENT TO SHOW NEW ORDER FORM
     if (e.target.id.includes('create-order')) {
-      orderCardsOnDom();
+      orderFormOnDom(uid);
     }
 
-    // EVENT TO CREATE AN ORDER
-    if (e.target.id.includes('submit-order')) {
-      e.preventDefault();
-      const newOrder = {
-        orderName: document.querySelector('#orderName').value,
-        customerPhone: document.querySelector('#customerPhone').value,
-        customerEmail: document.querySelector('#customerEmail').value,
-        orderType: document.querySelector('#orderType').value,
-        uid
-      };
-
-      createOrder(newOrder).then(orderCardsOnDom);
+    // EVENT TO VIEW REVENUE
+    if (e.target.id.includes('view-revenue')) {
+      viewRevenue();
     }
+
+    // CLICK EVENT FOR EDITING AN ITEM
   });
 };
 

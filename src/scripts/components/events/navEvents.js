@@ -2,7 +2,7 @@ import signOut from '../../helpers/signOut';
 import homeLoggedIn from '../pages/homeLoggedIn';
 import { getOrders } from '../../../api/orderData';
 import orderFormOnDom from '../forms/orderForm';
-import orderCardsOnDom from '../pages/allOrders';
+import { orderCardsOnDom } from '../pages/allOrders';
 
 const navEvents = (uid) => {
   // LOGOUT BUTTON
