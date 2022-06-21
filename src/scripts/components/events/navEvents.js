@@ -1,8 +1,8 @@
 import signOut from '../../helpers/signOut';
 import homeLoggedIn from '../pages/homeLoggedIn';
-// import { getOrders } from '../../../api/orderData';
+import { getOrders } from '../../../api/orderData';
 import orderFormOnDom from '../forms/orderForm';
-// import orderCardsOnDom from '../pages/allOrders';
+import orderCardsOnDom from '../pages/allOrders';
 
 const navEvents = (uid) => {
   // LOGOUT BUTTON
@@ -12,9 +12,9 @@ const navEvents = (uid) => {
   document.querySelector('#home').addEventListener('click', homeLoggedIn);
 
   // VIEW ORDER
-  /* document.querySelector('#view-order').addEventListener('click', () => {
+  document.querySelector('#view-orders').addEventListener('click', () => {
     getOrders(uid).then(orderCardsOnDom);
-  }); */
+  });
 
   // CREATE ORDER
   document.querySelector('#create-order').addEventListener('click', () => {
