@@ -10,7 +10,8 @@ import { viewCart, emptyCart } from '../../components/pages/cart';
 // import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
-// import domEvents from '../../components/events/domEvents';
+import domEvents from '../../components/events/domEvents';
+import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
 
 const startApp = (user) => {
   domBuilder();
@@ -22,8 +23,9 @@ const startApp = (user) => {
   emptyCart(user);
   logoutButton();
   navEvents(user.uid);
-  // orderDomEvents(user.uid);
-  // orderFormEvents(user.uid);
+  orderDomEvents(user.uid);
+  orderFormEvents(user.uid);
+  domEvents();
   // getFood().then((foodArray) => showFoods(foodArray));
   // getOrders().then((orderArray) => orderCardsOnDom(orderArray));
 //   getFood().then((foodArray) => showFoods(foodArray));
