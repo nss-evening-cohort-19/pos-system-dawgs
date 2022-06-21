@@ -2,7 +2,6 @@
 import navEvents from '../../components/events/navEvents';
 // import addFood from '../../components/forms/foodForm';
 import logoutButton from '../../components/logoutButton';
-// import { showFoods } from '../../components/pages/food';
 // import paymentForm from '../../components/forms/paymentForm';
 // import viewCart from '../../components/pages/cart';
 import homeLoggedIn from '../../components/pages/homeLoggedIn';
