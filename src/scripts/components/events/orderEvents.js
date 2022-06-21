@@ -55,7 +55,8 @@ const orderFormEvents = (uid) => {
         phone: document.querySelector('#customerPhone').value,
         email: document.querySelector('#customerEmail').value,
         type: document.querySelector('#orderType').value,
-        firebaseKey
+        firebaseKey,
+        uid
       };
       updateOrder(orderObject).then(orderCardsOnDom);
     }
