@@ -18,8 +18,8 @@ const startApp = (user) => {
   // addFood();
   // orderFormOnDom();
   paymentForm();
-  viewCart(user.uid);
-  emptyCart(user.uid);
+  viewCart(user);
+  emptyCart(user);
   logoutButton();
   navEvents(user.uid);
   // orderDomEvents(user.uid);
