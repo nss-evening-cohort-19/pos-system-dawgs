@@ -5,7 +5,7 @@ const orderFormOnDom = (order = {}) => {
   clearDom();
   const domstring = `
   <form id="${
-  order.firebaseKey ? `update-order--${order.firebaseKey}` : 'create-order'
+  order.firebaseKey ? `update-order--${order.firebaseKey}` : 'submit-order'
 }">
     <div class="mb-3">
       <label for="orderName" class="form-label">Order Name</label>
@@ -22,9 +22,9 @@ const orderFormOnDom = (order = {}) => {
 }" required>
       <select id="orderType" class="form-select" aria-label="Default select example">
         <label for="orderType" class="form-label">Order Type</label>
-        <option selected>Select An Order Type</option>
-        <option value="Phone">One</option>
-        <option value="In-Person">Two</option>
+        <option id="orderType" selected>Select An Order Type</option>
+        <option value="Phone">Phone</option>
+        <option value="In-Person">In-Person</option>
       </select>
       <button type="submit" class="btn btn-primary mt-3">Create/Edit Order</button>
     </div>
