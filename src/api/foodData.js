@@ -17,7 +17,7 @@ const getFood = () => new Promise((resolve, reject) => {
 // UPDATE Food
 const updateFood = (foodObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/foods/${foodObj.firebaseKey}.json`, foodObj)
-    .then(() => getFood(foodObj.uid).then(resolve))
+    .then(() => getFood().then(resolve))
     .catch(reject);
 });
 // DELETE Food
