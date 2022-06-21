@@ -47,5 +47,13 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
 });
 
 export {
+<<<<<<< HEAD
   getFood, updateFood, createFood, getSingleFood, deleteFood
+=======
+  getFood,
+  updateFood,
+  createFood,
+  deleteFood,
+  getSingleFood,
+>>>>>>> main
 };
