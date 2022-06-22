@@ -1,5 +1,6 @@
 import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
+import Dawgz from '../../../images/Dawgz.png';
 
 const orderFormOnDom = (order = {}) => {
   clearDom();
@@ -29,6 +30,8 @@ const orderFormOnDom = (order = {}) => {
       <button type="submit" class="btn btn-primary mt-3">Create/Edit Order</button>
     </div>
   </form>
+  <div><img class="nav-logo" src=${Dawgz} alt="pizza-logo" width="500” height="500”>
+</div>
   `;
   renderToDom('#form-container', domstring);
 };
