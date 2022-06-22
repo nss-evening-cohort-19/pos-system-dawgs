@@ -50,9 +50,9 @@ const updateOrder = (orderObj) => new Promise((resolve, reject) => {
     .then(() => getOrders().then(resolve))
     .catch(reject);
 });
-// GET a Single Order Item
-const getOrderItem = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orders.json?orderBy="author_id"&equalTo="${firebaseKey}"`)
+// GET Order Item
+const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
@@ -60,7 +60,7 @@ const getOrderItem = (firebaseKey) => new Promise((resolve, reject) => {
 // Exports
 export {
   getOrders,
-  getOrderItem,
+  getOrderItems,
   deleteOrder,
   getSingleOrder,
   createOrder,
