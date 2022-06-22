@@ -3,8 +3,8 @@ import { createOrder, getOrders } from '../../../api/orderData';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 import viewRevenue from '../pages/revenue';
-import { getSingleFood } from '../../../api/foodData';
-import { viewCart } from '../pages/cart';
+// import { getSingleFood } from '../../../api/foodData';
+// import { viewCart } from '../pages/cart';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -38,7 +38,7 @@ const domEvents = (uid) => {
       createOrder(newOrder).then(orderCardsOnDom);
     }
 
-    if (e.target.id.includes('order-details-btn')) {
+    /* if (e.target.id.includes('order-details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-console
       console.log('target id ===', e.target.id.split('--'), firebaseKey);
@@ -52,7 +52,7 @@ const domEvents = (uid) => {
     if (e.target.id.includes('update-food')) {
       e.preventDefault();
       console.warn('update-food submitted');
-    }
+    } */
   });
 };
 
