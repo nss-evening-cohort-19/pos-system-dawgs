@@ -2,9 +2,9 @@ import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const emptyCart = () => {
-  document.querySelector('#card-container').innerHTML = '<h1>There are no items in your cart.</h1>';
-  // const domString = '<h1>There are no items in your cart.</h1>';
-  // renderToDom('#card-container', domString);
+  // document.querySelector('#card-container').innerHTML = '<h1>There are no items in your cart.</h1>';
+  const domString = '<h1>There are no items in your cart.</h1>';
+  renderToDom('#card-container', domString);
 };
 
 const viewCart = (array) => {
