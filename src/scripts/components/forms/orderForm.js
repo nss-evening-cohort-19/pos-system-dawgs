@@ -21,11 +21,11 @@ const orderFormOnDom = (order = {}) => {
       <input type="email" class="form-control" id="customerEmail" placeholder="name@example.com" value="${
   order.email || ''
 }" required>
-      <select id="orderType" class="form-select" aria-label="Default select example">
+      <select id="orderType" class="form-select" aria-label="Default select example" required>
         <label for="orderType" class="form-label">Order Type</label>
         <option id="orderType" selected>Select An Order Type</option>
-        <option value="Phone">Phone</option>
-        <option value="In-Person">In-Person</option>
+        <option value="value="${order.type || 'Phone'}">Phone</option>
+        <option value="${order.type || 'In-Person'}">In-Person</option>
       </select>
       <button type="submit" class="btn btn-primary mt-3">Create/Edit Order</button>
     </div>
