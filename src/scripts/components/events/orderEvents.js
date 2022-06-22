@@ -3,17 +3,18 @@ import {
 } from '../../../api/orderData';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
+import { viewCart } from '../pages/cart';
 
 // *** Buttons on Order Cards ***
-const orderDomEvents = (uid) => {
+const orderDomEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
   // DETAILS
-  // if (e.target.id.includes('order-details-btn')) {
-  //   const [, orderFirebaseKey] = e.target.id.split('--');
-  //   viewOrderDetails(orderFirebaseKey).then((cartList) => {
-  //     viewCart(cartList);
-  //   });
-  // }
+    if (e.target.id.includes('order-details-btn')) {
+      const [, orderFirebaseKey] = e.target.id.split('--');
+      viewCart(orderFirebaseKey).then((cartList) => {
+        viewCart(cartList);
+      });
+    }
 
     // EDIT
     if (e.target.id.includes('update-order-btn')) {
@@ -25,7 +26,7 @@ const orderDomEvents = (uid) => {
     if (e.target.id.includes('delete-order-btn')) {
       console.warn('Button clicked');
       const [, firebaseKey] = e.target.id.split('--');
-      deleteOrder(firebaseKey, uid).then((orderArray) => orderCardsOnDom(orderArray));
+      deleteOrder(firebaseKey).then((orderArray) => orderCardsOnDom(orderArray));
     }
   });
 };

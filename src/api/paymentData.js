@@ -29,7 +29,7 @@ const deletePayment = (firebaseKey) => new Promise((resolve, reject) => {
 
 // GET SINGLE PAYMENT
 const getSinglePayment = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/payments/${firebaseKey}.json`)
+  axios.get(`${dbUrl}/payments.json?orderBy="type"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });

@@ -28,13 +28,11 @@ const viewCart = (array) => {
     emptyCart();
   }
 
-  // const cartButtons = () => {
-  //   const buttonString = `
-  //   <button type="button" class="btn btn-success">Add Item</button>
-  //   <button type="button" class="btn btn-primary">Go To Payment</button>
-  // `;
-  //   renderToDom('#card-container', buttonString);
-  // };
+  const buttonString = `
+    <button type="button" class="btn btn-success">Add Item</button>
+    <button type="button" class="btn btn-primary">Go To Payment</button>
+  `;
+  renderToDom('#buttons-container', buttonString);
 };
 
 export { viewCart, emptyCart };
