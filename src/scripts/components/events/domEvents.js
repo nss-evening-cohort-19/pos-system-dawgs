@@ -1,7 +1,10 @@
 import { createOrder, getOrders } from '../../../api/orderData';
+// import addFood from '../forms/foodForm';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 import viewRevenue from '../pages/revenue';
+import { getSingleFood } from '../../../api/foodData';
+import { viewCart } from '../pages/cart';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -33,6 +36,22 @@ const domEvents = (uid) => {
       };
 
       createOrder(newOrder).then(orderCardsOnDom);
+    }
+
+    if (e.target.id.includes('order-details-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      // eslint-disable-next-line no-console
+      console.log('target id ===', e.target.id.split('--'), firebaseKey);
+      getSingleFood(firebaseKey).then((foodObj) => {
+        // eslint-disable-next-line no-console
+        console.log('single food ===', foodObj);
+        viewCart(foodObj.firebaseKey, foodObj);
+      });
+    }
+    // CLICK EVENT FOR SUBMIT FOOD
+    if (e.target.id.includes('update-food')) {
+      e.preventDefault();
+      console.warn('update-food submitted');
     }
   });
 };

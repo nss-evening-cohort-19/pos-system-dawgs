@@ -30,8 +30,10 @@ const deleteFood = (firebaseKey, uid) => new Promise((resolve, reject) => {
 });
 // GET Single Food
 const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/foods/${firebaseKey}.json`)
-    .then((response) => resolve(response.data))
+  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
     .catch((error) => reject(error));
 });
 // CREATE Food

@@ -1,6 +1,7 @@
 import {
   createOrder, deleteOrder, getSingleOrder, updateOrder
 } from '../../../api/orderData';
+import addFood from '../forms/foodForm';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 
@@ -44,7 +45,11 @@ const orderFormEvents = (uid) => {
         type: document.querySelector('#orderType').value,
         uid
       };
-      createOrder(orderObj).then((orderArray) => orderCardsOnDom(orderArray));
+      // createOrder(orderObj).then((orderArray) => orderCardsOnDom(orderArray));
+      // eslint-disable-next-line no-console
+      console.log('orderform event ===', orderObj);
+      // eslint-disable-next-line no-console
+      createOrder(orderObj).then((orderArray) => addFood(uid, orderArray));
     }
 
     // UPDATE Order Form

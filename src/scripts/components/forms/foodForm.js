@@ -2,6 +2,8 @@ import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const addFood = (uid, obj = {}) => {
+  // eslint-disable-next-line no-console
+  console.log('addFood ===', uid, obj);
   clearDom();
   const domString = `
   <form id="${obj.firebaseKey ? `update-food--${obj.firebaseKey}` : 'submit-food'}" class="mb-4">
