@@ -50,10 +50,17 @@ const updateOrder = (orderObj) => new Promise((resolve, reject) => {
     .then(() => getOrders().then(resolve))
     .catch(reject);
 });
+// GET a Single Order Item
+const getOrderItem = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orders.json?orderBy="author_id"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
 
 // Exports
 export {
   getOrders,
+  getOrderItem,
   deleteOrder,
   getSingleOrder,
   createOrder,

@@ -10,6 +10,8 @@ const addFood = (uid, obj = {}) => {
     <input type="text" class="form-control" id="name" placeholder="Item Name" value="${obj.name || ''}" required>
   </div>
   <div class="mb-3">
+  </div>
+  <div class="mb-3">
     <label for="" class="form-label">Item Price</label>
     <input type="text" class="form-control" id="price" placeholder="Item Price" value="${obj.price || ''}"  required>
   </div>
