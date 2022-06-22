@@ -7,12 +7,11 @@ import paymentForm from '../../components/forms/paymentForm';
 // import orderFormOnDom from '../../components/forms/orderForm';
 // import { viewCart, emptyCart } from '../../components/pages/cart';
 // import orderCardsOnDom from '../../components/pages/allOrders';
-// import homeLoggedIn from '../../components/pages/homeLoggedIn';
+import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
 import domEvents from '../../components/events/domEvents';
 import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
-import homeLoggedIn from '../../components/pages/homeLoggedIn';
 
 const startApp = (user) => {
   domBuilder();
