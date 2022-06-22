@@ -10,14 +10,14 @@ const domEvents = (uid) => {
       getOrders(uid).then(orderCardsOnDom);
     }
 
-    // CLICK EVENT TO SHOW NEW ORDER FORM
-    if (e.target.id.includes('create-order')) {
-      orderFormOnDom(uid);
-    }
-
     // EVENT TO VIEW REVENUE
     if (e.target.id.includes('view-revenue')) {
       viewRevenue();
+    }
+
+    // CLICK EVENT TO SHOW NEW ORDER FORM
+    if (e.target.id.includes('create-order')) {
+      orderFormOnDom(uid);
     }
 
     // CLICK EVENT FOR SUBMIT ORDER
