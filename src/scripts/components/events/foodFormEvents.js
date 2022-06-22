@@ -1,32 +1,25 @@
 import { createFood, updateFood } from '../../../api/foodData';
+// import viewOrderDetails from '../../../api/mergedData';
+// import { viewCart } from '../pages/cart';
 // import { getOrderItems } from '../../../api/orderData';
 // import { orderCardsOnDom } from '../pages/allOrders';
-// import { viewCart } from '../pages/cart';
 import { showFoods } from '../pages/food';
 
 const foodFormEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (e.target.id.includes('submit-food')) {
-      const [, firebaseKey] = e.target.id.split('--');
+    if (e.target.id.includes('submit-item')) {
+      const [, orderId] = e.target.id.split('--');
       const foodObj = {
         name: document.querySelector('#name').value,
         price: document.querySelector('#price').value,
-        orderId: firebaseKey
+        orderId
       };
       createFood(foodObj).then(() => console.warn(foodObj));
-      // createFood(foodObj)
-      //   .then((foodArray) => {
-      //     foodArray.forEach((item) => {
-      //       if (firebaseKey === item.orderId) {
-      //         getOrderItems(foodObj.orderId).then((orderObject) => orderCardsOnDom(orderObject));
-      //       } else {
-      //         console.warn(foodArray);
-      //       }
-      //     });
-      //   });
+    //   console.warn(foodObj);
+    //   createFood(foodObj).then(() => viewOrderDetails(foodObj.orderId).then((orderObj) => viewCart(orderObj)));
     }
-    if (e.target.id.includes('update-food')) {
+    if (e.target.id.includes('update-item')) {
       const [, firebaseKey] = e.target.id.split('--');
       const foodObj = {
         name: document.querySelector('#name').value,

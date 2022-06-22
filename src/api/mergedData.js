@@ -29,7 +29,7 @@ import { getOrderItems } from './orderData';
 const viewOrderDetails = (orderFireBaseKey) => new Promise((resolve, reject) => {
   getSingleFood(orderFireBaseKey)
     .then((obj) => {
-      getOrderItems(obj.firebaseKey)
+      getOrderItems(obj)
         .then((ordersItems) => {
           resolve({ ordersItems, ...obj });
         });

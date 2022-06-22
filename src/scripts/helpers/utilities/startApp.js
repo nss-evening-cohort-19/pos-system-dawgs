@@ -18,7 +18,7 @@ import foodDomEvents from '../../components/events/foodDomEvents';
 const startApp = (user) => {
   domBuilder();
   navBar();
-  addFood();
+  addFood(user.uid);
   foodFormEvents();
   foodDomEvents();
   // orderFormOnDom();
