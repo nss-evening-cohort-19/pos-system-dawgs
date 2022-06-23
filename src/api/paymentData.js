@@ -19,17 +19,17 @@ const getPayments = () => new Promise((resolve, reject) => {
 });
 
 // DELETE PAYMENTS
-// const deletePayment = (firebaseKey) => new Promise((resolve, reject) => {
-//   axios.delete(`${dbUrl}/payments/${firebaseKey}.json`)
-//     .then(() => {
-//       getPayments().then((paymentsArray) => resolve(paymentsArray));
-//     })
-//     .catch((error) => reject(error));
-// });
+const deletePayment = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/payments/${firebaseKey}.json`)
+    .then(() => {
+      getPayments().then((paymentsArray) => resolve(paymentsArray));
+    })
+    .catch((error) => reject(error));
+});
 
 // GET SINGLE PAYMENT
 const getSinglePayment = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/payments/${firebaseKey}.json`)
+  axios.get(`${dbUrl}/payments.json?orderBy="type"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
@@ -56,7 +56,7 @@ const updatePayment = (paymentObj) => new Promise((resolve, reject) => {
 export {
   getPayments,
   createPayment,
-  // deletePayment,
+  deletePayment,
   getSinglePayment,
   updatePayment
 };
