@@ -10,6 +10,7 @@ import {
   orderDomEvents,
   orderFormEvents,
 } from '../../components/events/orderEvents';
+import foodFormEvents from '../../components/events/foodFormEvents';
 
 const startApp = (user) => {
   domBuilder();
@@ -19,6 +20,7 @@ const startApp = (user) => {
   emptyCart(user);
   logoutButton();
   navEvents(user.uid);
+  foodFormEvents(user.uid);
   orderDomEvents(user.uid);
   orderFormEvents(user.uid);
   homeLoggedIn(user.uid);
