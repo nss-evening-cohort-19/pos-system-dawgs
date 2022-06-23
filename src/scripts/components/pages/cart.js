@@ -2,9 +2,9 @@ import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const emptyCart = () => {
-  document.querySelector('#card-container').innerHTML = '<h1>There are no items in your cart.</h1>';
-  // const domString = '<h1>There are no items in your cart.</h1>';
-  // renderToDom('#card-container', domString);
+  // document.querySelector('#card-container').innerHTML = '<h1>There are no items in your cart.</h1>';
+  const domString = '<h1>There are no items in your cart.</h1>';
+  renderToDom('#card-container', domString);
 };
 
 const viewCart = (array) => {
@@ -28,13 +28,11 @@ const viewCart = (array) => {
     emptyCart();
   }
 
-  // const cartButtons = () => {
-  //   const buttonString = `
-  //   <button type="button" class="btn btn-success">Add Item</button>
-  //   <button type="button" class="btn btn-primary">Go To Payment</button>
-  // `;
-  //   renderToDom('#card-container', buttonString);
-  // };
+  const buttonString = `
+    <button type="button" class="btn btn-success">Add Item</button>
+    <button type="button" class="btn btn-primary">Go To Payment</button>
+  `;
+  renderToDom('#buttons-container', buttonString);
 };
 
 export { viewCart, emptyCart };
