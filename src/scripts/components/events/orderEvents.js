@@ -1,3 +1,4 @@
+import { getFood } from '../../../api/foodData';
 import {
   createOrder, deleteOrder, getSingleOrder, updateOrder
 } from '../../../api/orderData';
@@ -10,8 +11,9 @@ const orderDomEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
   // DETAILS
     if (e.target.id.includes('order-details-btn')) {
+      console.warn('You clicked order details button');
       const [, orderFirebaseKey] = e.target.id.split('--');
-      viewCart(orderFirebaseKey).then((cartList) => {
+      getFood(orderFirebaseKey).then((cartList) => {
         viewCart(cartList);
       });
     }
