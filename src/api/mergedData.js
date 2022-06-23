@@ -10,6 +10,9 @@
 //   });
 // };
 
+import { getSingleFood } from './foodData';
+import { getOrderItems } from './orderData';
+
 // const viewOrderProfit = async (firebaseKey) => {
 //   const paymentObject = await getPayments(firebaseKey);
 //   return ({
@@ -25,3 +28,13 @@
 // });
 
 // export { viewOrderDetails, deleteOrderItems, viewOrderProfit };
+const viewOrderDetails = (orderFireBaseKey) => new Promise((resolve, reject) => {
+  getSingleFood(orderFireBaseKey)
+    .then((obj) => {
+      getOrderItems(obj)
+        .then((ordersItems) => {
+          resolve({ ordersItems, ...obj });
+        });
+    }).catch((error) => reject(error));
+});
+export default viewOrderDetails;
