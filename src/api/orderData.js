@@ -57,6 +57,20 @@ const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// SEARCH ORDERS
+const searchOrders = (string, uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
+    .then((orders) => {
+      const foundOrders = orders.filter((order) => {
+        const querybyName = order.customerName.toLowerCase().includes(string);
+        const querybyNumber = order.customerPhone.includes(string);
+        return (querybyName || querybyNumber);
+      });
+      resolve(foundOrders);
+    })
+    .catch(reject);
+});
+
 // Exports
 export {
   getOrders,
@@ -65,4 +79,5 @@ export {
   getSingleOrder,
   createOrder,
   updateOrder,
+  searchOrders
 };

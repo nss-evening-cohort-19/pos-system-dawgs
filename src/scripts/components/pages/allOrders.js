@@ -8,6 +8,8 @@ const noOrders = () => {
 const orderCardsOnDom = (array) => {
   clearDom();
   if (array.length) {
+    // eslint-disable-next-line no-console
+    console.log('array food ===', array);
     let domString = '';
     array.forEach((order) => {
       domString += `
