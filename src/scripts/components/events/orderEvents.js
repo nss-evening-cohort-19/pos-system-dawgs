@@ -12,7 +12,6 @@ const orderDomEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
   // DETAILS
     if (e.target.id.includes('order-details-btn')) {
-      console.warn('You clicked order details button');
       const [, orderFirebaseKey] = e.target.id.split('--');
       getFood(orderFirebaseKey).then((cartList) => {
         viewCart(cartList);

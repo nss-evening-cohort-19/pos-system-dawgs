@@ -29,8 +29,8 @@ const viewCart = (array) => {
   }
 
   const buttonString = `
-    <button type="button" class="btn btn-success">Add Item</button>
-    <button type="button" class="btn btn-primary">Go To Payment</button>
+    <button type="button" id="add-item-btn" class="btn btn-success">Add Item</button>
+    <button type="button" id="payment-btn" class="btn btn-primary">Go To Payment</button>
   `;
   renderToDom('#buttons-container', buttonString);
 };

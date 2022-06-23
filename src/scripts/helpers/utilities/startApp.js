@@ -11,11 +11,8 @@ import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
 import domEvents from '../../components/events/domEvents';
 import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
-<<<<<<< HEAD
 import cartEvents from '../../components/events/cartEvents';
-=======
 import foodFormEvents from '../../components/events/foodFormEvents';
->>>>>>> main
 // import { getOrders } from '../../../api/orderData';
 // import { viewCart } from '../../components/pages/cart';
 
@@ -27,10 +24,10 @@ const startApp = (user) => {
   paymentForm();
   // viewCart(user);
   // emptyCart(user);
-  cartEvents();
   homeLoggedIn();
   logoutButton();
   navEvents(user.uid);
+  cartEvents(user.uid);
   foodFormEvents(user.uid);
   orderDomEvents(user.uid);
   orderFormEvents(user.uid);
