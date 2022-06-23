@@ -16,9 +16,9 @@ const checkLoginStatus = () => {
       logoutButton();
     } else {
       // person is NOT logged in
-      document.querySelector('#home').innerHTML = `
-      <h1>HIP HOP, PIZZA, AND WINGS!</h1>
-      `;
+      // document.querySelector('#home').innerHTML = `
+      // <h1>HIP HOP, PIZZA, AND WINGS!</h1>
+      // `;
       loginButton();
     }
   });

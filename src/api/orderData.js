@@ -50,6 +50,18 @@ const updateOrder = (orderObj) => new Promise((resolve, reject) => {
     .then(() => getOrders().then(resolve))
     .catch(reject);
 });
+// GET Order Item
+const getOrderItems = (orderId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch((error) => reject(error));
+});
 
 // SEARCH ORDERS
 const searchOrders = (string, uid) => new Promise((resolve, reject) => {
@@ -68,6 +80,7 @@ const searchOrders = (string, uid) => new Promise((resolve, reject) => {
 // Exports
 export {
   getOrders,
+  getOrderItems,
   deleteOrder,
   getSingleOrder,
   createOrder,

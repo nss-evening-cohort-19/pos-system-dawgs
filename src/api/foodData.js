@@ -43,7 +43,7 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/foods/${response.data.name}.json`, payload)
         .then(() => {
-          getFood(foodObj.uid).then(resolve);
+          getFood(foodObj.orderId).then(resolve);
         });
     }).catch(reject);
 });
