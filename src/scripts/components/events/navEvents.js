@@ -1,6 +1,6 @@
 import signOut from '../../helpers/signOut';
 import homeLoggedIn from '../pages/homeLoggedIn';
-import { getOrders } from '../../../api/orderData';
+import { getOrders, searchOrders } from '../../../api/orderData';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 
@@ -19,6 +19,13 @@ const navEvents = (uid) => {
   // CREATE ORDER
   document.querySelector('#create-order').addEventListener('click', () => {
     orderFormOnDom(uid);
+  });
+
+  // SEARCH BAR
+  document.querySelector('#search').addEventListener('click', (e) => {
+    e.preventDefault();
+    const string = document.querySelector('#searchBar').value.toLowerCase();
+    searchOrders(uid, string).then(orderCardsOnDom);
   });
 };
 

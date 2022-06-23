@@ -1,4 +1,3 @@
-// import { getFood } from '../../../api/foodData';
 import navEvents from '../../components/events/navEvents';
 import addFood from '../../components/forms/foodForm';
 import logoutButton from '../../components/logoutButton';
@@ -28,6 +27,7 @@ const startApp = (user) => {
   navEvents(user.uid);
   orderDomEvents(user.uid);
   orderFormEvents(user.uid);
+  homeLoggedIn(user.uid);
   domEvents();
   // getFood().then((foodArray) => showFoods(foodArray));
   // getOrders().then((orderArray) => orderCardsOnDom(orderArray));
