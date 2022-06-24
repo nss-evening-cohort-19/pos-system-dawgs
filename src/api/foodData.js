@@ -3,8 +3,8 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 // GET Food
-const getFood = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/foods.json`)
+const getFood = (orderId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -12,25 +12,38 @@ const getFood = () => new Promise((resolve, reject) => {
         resolve([]);
       }
     })
-    .catch(reject);
+    .catch((error) => reject(error));
 });
+const getFoods = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json`)
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    }).catch((error) => reject(error));
+});
+
 // UPDATE Food
-const updateFood = (foodObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/foods/${foodObj.firebaseKey}.json`, foodObj)
-    .then(() => getFood().then(resolve))
+const updateFood = (foodObj, firebaseKey) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/foods/${firebaseKey}.json`, foodObj)
+    .then(resolve)
     .catch(reject);
 });
 // DELETE Food
-const deleteFood = (firebaseKey, uid) => new Promise((resolve, reject) => {
+const deleteFood = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/foods/${firebaseKey}.json`)
-    .then(() => {
-      getFood(uid).then((cardsArray) => resolve(cardsArray));
-    })
-    .catch(reject);
+  // .then(() => {
+  //   getFood(orderId).then((cardsArray) => resolve(cardsArray));
+  // })
+  // .catch(reject);
+    .then(resolve)
+    .catch((error) => reject(error));
 });
 // GET Single Food
 const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
+  axios.get(`${dbUrl}/foods/${firebaseKey}.json`)
     .then((response) => {
       resolve(response.data);
     })
@@ -50,6 +63,7 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
 
 export {
   getFood,
+  getFoods,
   updateFood,
   createFood,
   deleteFood,
