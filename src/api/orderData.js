@@ -4,8 +4,8 @@ import firebaseConfig from './apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET Orders
-const getOrders = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orders.json`)
+const getOrders = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orders.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -17,9 +17,9 @@ const getOrders = () => new Promise((resolve, reject) => {
 });
 
 // DELETE Order
-const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteOrder = (firebaseKey, uid) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/orders/${firebaseKey}.json`).then(() => {
-    getOrders().then((ordersArray) => resolve(ordersArray));
+    getOrders(uid).then((ordersArray) => resolve(ordersArray));
   })
     .catch((error) => reject(error));
 });
@@ -38,7 +38,7 @@ const createOrder = (orderObj) => new Promise((resolve, reject) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orders/${response.data.name}.json`, payload)
         .then(() => {
-          getOrders().then(resolve);
+          getOrders(orderObj.uid).then((ordersArray) => resolve(ordersArray));
         });
     })
     .catch((error) => reject(error));
@@ -47,19 +47,13 @@ const createOrder = (orderObj) => new Promise((resolve, reject) => {
 // UPDATE Order
 const updateOrder = (orderObj) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/orders/${orderObj.firebaseKey}.json`, orderObj)
-    .then(() => getOrders().then(resolve))
+    .then(() => getOrders(orderObj.uid).then(resolve))
     .catch(reject);
 });
 // GET Order Item
-const getOrderItems = (orderId) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
-    .then((response) => {
-      if (response.data) {
-        resolve(Object.values(response.data));
-      } else {
-        resolve([]);
-      }
-    })
+const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
