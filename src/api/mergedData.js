@@ -1,5 +1,5 @@
-import { getSingleFood } from './foodData';
-import { getOrderItems } from './orderData';
+// import { getSingleFood } from './foodData';
+import { getOrderItems, getSingleOrder } from './orderData';
 import { getPayments } from './paymentData';
 
 // ORDER REVENUE
@@ -19,7 +19,7 @@ const viewOrderRevenue = async (firebaseKey) => {
 
 // export { viewOrderDetails, deleteOrderItems, viewOrderProfit };
 const viewOrderDetails = (orderFireBaseKey) => new Promise((resolve, reject) => {
-  getSingleFood(orderFireBaseKey)
+  getSingleOrder(orderFireBaseKey)
     .then((obj) => {
       getOrderItems(obj.firebaseKey)
         .then((ordersItems) => {
