@@ -9,11 +9,7 @@ import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
 import formEvents from '../../components/events/formEvents';
-<<<<<<< HEAD
-// import cartEvents from '../../components/events/cartEvents';
-=======
 import domEvents from '../../components/events/domEvents';
->>>>>>> main
 // import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
 // import { foodFormEvents, foodDomEvents } from '../../components/events/foodEvents';
 
