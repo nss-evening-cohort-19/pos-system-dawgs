@@ -4,9 +4,13 @@ import firebaseConfig from './apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 // GET Food
 const getFood = (orderId) => new Promise((resolve, reject) => {
+  // eslint-disable-next-line no-console
+  console.log('orderId ===', orderId);
   axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
     .then((response) => {
       if (response.data) {
+        // eslint-disable-next-line no-console
+        console.log('response ===', response.data);
         resolve(Object.values(response.data));
       } else {
         resolve([]);
