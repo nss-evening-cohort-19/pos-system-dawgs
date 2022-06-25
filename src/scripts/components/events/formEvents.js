@@ -1,7 +1,7 @@
 import { createFood, updateFood } from '../../../api/foodData';
 // import viewOrderDetails from '../../../api/mergedData';
 import { createOrder, getOrders, updateOrder } from '../../../api/orderData';
-import addFood from '../forms/foodForm';
+// import addFood from '../forms/foodForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 import { showFoods } from '../pages/food';
 
@@ -23,7 +23,7 @@ const formEvents = (uid) => {
       // eslint-disable-next-line no-console
       console.log('orderform event ===', orderObj);
       // eslint-disable-next-line no-console
-      createOrder(orderObj, uid).then((orderArray) => addFood(orderArray));
+      createOrder(orderObj, uid).then((orderArray) => orderCardsOnDom(orderArray));
     }
 
     // UPDATE Order Form

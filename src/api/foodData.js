@@ -49,10 +49,15 @@ const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
     })
     .catch((error) => reject(error));
 });
-const getFoodsOrder = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${firebaseKey}"`)
-    .then((response) => resolve(Object.values(response.data)))
-    .catch((error) => reject(error));
+const getFoodsOrder = (orderId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
+    .then((itemsArr) => {
+      if (itemsArr.data) {
+        resolve(Object.values(itemsArr.data));
+      } else {
+        resolve([]);
+      }
+    }).catch((error) => reject(error));
 });
 
 // CREATE Food
@@ -66,6 +71,18 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
         });
     }).catch(reject);
 });
+
+// CREATE Food
+// const createFood = (foodObj, firebaseKey) => new Promise((resolve, reject) => {
+//   axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
+//     .then((response) => {
+//       const payload = { firebaseKey: response.data.name };
+//       axios.patch(`${dbUrl}/foods/${firebaseKey}.json`, payload)
+//         .then(() => {
+//           getFoodsOrder(foodObj.orderId).then(resolve);
+//         });
+//     }).catch(reject);
+// });
 
 export {
   getFood,
