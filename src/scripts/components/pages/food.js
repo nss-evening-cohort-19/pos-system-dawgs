@@ -36,7 +36,7 @@ const showFoods = (orderId) => {
   });
   const buttonString = `
     <button id="addItemBtn--${orderId}" type="button" class="btn btn-success">Add Item</button>
-    <button type="button" class="btn btn-primary">Go To Payment</button>
+    <button type="button" id="payment-btn" class="btn btn-primary">Go To Payment</button>
   `;
   renderToDom('#buttons-container', buttonString);
 };

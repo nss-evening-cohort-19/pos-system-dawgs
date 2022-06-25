@@ -1,6 +1,5 @@
-import { deleteFood, getFood, getSingleFood } from '../../../api/foodData';
+import { deleteFood, getFoods, getSingleFood } from '../../../api/foodData';
 import {
-  createOrder,
   deleteOrder,
   getOrders,
   getSingleOrder
@@ -31,25 +30,25 @@ const domEvents = (uid) => {
       orderFormOnDom(uid);
     }
 
-    // CLICK EVENT FOR SUBMIT ORDER
-    if (e.target.id.includes('submit-order')) {
-      e.preventDefault();
-      console.warn('Order submitted');
-      const newOrder = {
-        customerName: document.querySelector('#orderName').value,
-        customerPhone: document.querySelector('#customerPhone').value,
-        customerEmail: document.querySelector('#customerEmail').value,
-        orderType: document.querySelector('#orderType').value,
-        uid
-      };
+    // // CLICK EVENT FOR SUBMIT ORDER
+    // if (e.target.id.includes('submit-order')) {
+    //   e.preventDefault();
+    //   console.warn('Order submitted');
+    //   const newOrder = {
+    //     customerName: document.querySelector('#orderName').value,
+    //     customerPhone: document.querySelector('#customerPhone').value,
+    //     customerEmail: document.querySelector('#customerEmail').value,
+    //     orderType: document.querySelector('#orderType').value,
+    //     uid
+    //   };
 
-      createOrder(newOrder).then(orderCardsOnDom);
-    }
+    //   createOrder(newOrder).then(orderCardsOnDom);
+    // }
     // DETAILS on Order
     if (e.target.id.includes('order-details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       console.warn('You clicked order details button', firebaseKey);
-      getFood(firebaseKey).then((cartList) => {
+      getFoods(firebaseKey).then((cartList) => {
         showFoods((cartList.length && cartList[0].firebaseKey) || undefined);
       });
     }
@@ -86,6 +85,11 @@ const domEvents = (uid) => {
       console.warn('holla');
       const [, orderId] = e.target.id.split('--');
       addFood({}, orderId);
+    }
+    if (e.target.id.includes('payment-btn')) {
+      console.warn('You clicked the go to payment button.');
+      // const [, orderId] = e.target.id.split('--');
+      // getSinglePayment(firebaseKey).then((paymentObj) => paymentForm(uid, paymentObj));
     }
     /* if (e.target.id.includes('order-details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');

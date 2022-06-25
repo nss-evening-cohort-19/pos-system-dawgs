@@ -4,8 +4,8 @@ import firebaseConfig from './apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET Orders
-const getOrders = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orders.json`)
+const getOrders = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orders.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -31,14 +31,14 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// CREATE Order
 const createOrder = (orderObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/orders.json`, orderObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orders/${response.data.name}.json`, payload)
         .then(() => {
-          getOrders(orderObj.uid).then((ordersArray) => resolve(ordersArray));
+          console.warn(payload.firebaseKey, 'create order');
+          resolve(payload.firebaseKey);
         });
     })
     .catch((error) => reject(error));

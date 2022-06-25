@@ -1,27 +1,27 @@
 import navEvents from '../../components/events/navEvents';
-import addFood from '../../components/forms/foodForm';
+// import addFood from '../../components/forms/foodForm';
 import logoutButton from '../../components/logoutButton';
 import paymentForm from '../../components/forms/paymentForm';
-import orderFormOnDom from '../../components/forms/orderForm';
+// import orderFormOnDom from '../../components/forms/orderForm';
+// import { viewCart, emptyCart } from '../../components/pages/cart';
 // import { orderCardsOnDom } from '../../components/pages/allOrders';
 import homeLoggedIn from '../../components/pages/homeLoggedIn';
 import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
-import domEvents from '../../components/events/domEvents';
 import formEvents from '../../components/events/formEvents';
+import domEvents from '../../components/events/domEvents';
 // import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
 // import { foodFormEvents, foodDomEvents } from '../../components/events/foodEvents';
 
 const startApp = (user) => {
   domBuilder();
-  navBar();
-  addFood();
-  orderFormOnDom();
+  navBar(user);
+  // addFood();
+  // orderFormOnDom();
   paymentForm();
   // viewCart(user);
   // emptyCart(user);
-  homeLoggedIn();
-  logoutButton();
+  logoutButton(user.uid);
   navEvents(user.uid);
   // foodDomEvents(user.uid);
   // foodFormEvents(user.uid);
