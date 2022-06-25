@@ -17,8 +17,8 @@ const viewCart = (array) => {
          <div class="card-body">
           <h5 class="card-title">${item.name}</h5>
           <h5 class="card-subtitle">${item.price}</h5>
-           <a href="#" i id="edit-card-btn--${item.firebaseKey}" class="card-link">Edit Item</a>
-           <a href="#" i id="delete-card-btn--${item.firebaseKey}" class="card-link">Delete Item</a>
+           <a href="#" i id="edit-card-btn--${item.orderId}" class="card-link">Edit Item</a>
+           <a href="#" i id="delete-card-btn--${item.orderId}" class="card-link">Delete Item</a>
           </div>
          </div>
       `;

@@ -1,4 +1,4 @@
-import { createOrder, getOrders } from '../../../api/orderData';
+import { getOrders } from '../../../api/orderData';
 // import addFood from '../forms/foodForm';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
@@ -21,21 +21,6 @@ const domEvents = (uid) => {
     // CLICK EVENT TO SHOW NEW ORDER FORM
     if (e.target.id.includes('create-order')) {
       orderFormOnDom(uid);
-    }
-
-    // CLICK EVENT FOR SUBMIT ORDER
-    if (e.target.id.includes('submit-order')) {
-      e.preventDefault();
-      console.warn('Order submitted');
-      const newOrder = {
-        customerName: document.querySelector('#orderName').value,
-        customerPhone: document.querySelector('#customerPhone').value,
-        customerEmail: document.querySelector('#customerEmail').value,
-        orderType: document.querySelector('#orderType').value,
-        uid
-      };
-
-      createOrder(newOrder).then(orderCardsOnDom);
     }
 
     /* if (e.target.id.includes('order-details-btn')) {
