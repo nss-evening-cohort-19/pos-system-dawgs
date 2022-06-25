@@ -1,23 +1,6 @@
-<<<<<<< HEAD
-// import { getSingleOrder } from './orderData';
-
-// // VIEW ORDER DETAILS
-// const viewOrderDetails = async (firebaseKey) => {
-//   const orderObject = await getSingleOrder(firebaseKey);
-//   const itemObject = await getItems(firebaseKey);
-//   return ({
-//     itemObject,
-//     ...orderObject
-//   });
-// };
-
 // import { getSingleFood } from './foodData';
 import { getOrderItems, getSingleOrder } from './orderData';
-=======
-import { getSingleFood } from './foodData';
-import { getOrderItems } from './orderData';
 import { getPayments } from './paymentData';
->>>>>>> main
 
 // ORDER REVENUE
 const viewOrderRevenue = async (firebaseKey) => {
