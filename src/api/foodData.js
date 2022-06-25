@@ -3,7 +3,7 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 // GET Food
-const getFood = (orderId) => new Promise((resolve, reject) => {
+const getFoodOrder = (orderId) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
     .then((response) => {
       if (response.data) {
@@ -72,20 +72,8 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 
-// CREATE Food
-// const createFood = (foodObj, firebaseKey) => new Promise((resolve, reject) => {
-//   axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
-//     .then((response) => {
-//       const payload = { firebaseKey: response.data.name };
-//       axios.patch(`${dbUrl}/foods/${firebaseKey}.json`, payload)
-//         .then(() => {
-//           getFoodsOrder(foodObj.orderId).then(resolve);
-//         });
-//     }).catch(reject);
-// });
-
 export {
-  getFood,
+  getFoodOrder,
   getFoods,
   updateFood,
   createFood,

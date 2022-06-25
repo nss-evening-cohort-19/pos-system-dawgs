@@ -10,8 +10,8 @@
 //   });
 // };
 
-import { getSingleFood } from './foodData';
-import { getOrderItems } from './orderData';
+// import { getSingleFood } from './foodData';
+import { getOrderItems, getSingleOrder } from './orderData';
 
 // const viewOrderProfit = async (firebaseKey) => {
 //   const paymentObject = await getPayments(firebaseKey);
@@ -29,7 +29,7 @@ import { getOrderItems } from './orderData';
 
 // export { viewOrderDetails, deleteOrderItems, viewOrderProfit };
 const viewOrderDetails = (orderFireBaseKey) => new Promise((resolve, reject) => {
-  getSingleFood(orderFireBaseKey)
+  getSingleOrder(orderFireBaseKey)
     .then((obj) => {
       getOrderItems(obj.firebaseKey)
         .then((ordersItems) => {

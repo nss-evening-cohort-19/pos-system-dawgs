@@ -3,7 +3,7 @@ import navEvents from '../../components/events/navEvents';
 import logoutButton from '../../components/logoutButton';
 // import { showFoods } from '../../components/pages/food';
 import paymentForm from '../../components/forms/paymentForm';
-import orderFormOnDom from '../../components/forms/orderForm';
+// import orderFormOnDom from '../../components/forms/orderForm';
 // import { viewCart, emptyCart } from '../../components/pages/cart';
 // import { orderCardsOnDom } from '../../components/pages/allOrders';
 import homeLoggedIn from '../../components/pages/homeLoggedIn';
@@ -18,14 +18,13 @@ import formEvents from '../../components/events/formEvents';
 
 const startApp = (user) => {
   domBuilder();
-  navBar();
+  navBar(user);
   // addFood();
-  orderFormOnDom();
+  // orderFormOnDom();
   paymentForm();
   // viewCart(user);
   // emptyCart(user);
-  homeLoggedIn();
-  logoutButton();
+  logoutButton(user.uid);
   navEvents(user.uid);
   // foodDomEvents(user.uid);
   // foodFormEvents(user.uid);
