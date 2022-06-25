@@ -1,4 +1,4 @@
-import { deleteFood, getFoods, getSingleFood } from '../../../api/foodData';
+import { deleteFood, getFoodsOrder, getSingleFood } from '../../../api/foodData';
 import {
   deleteOrder,
   getOrders,
@@ -52,7 +52,7 @@ const domEvents = (uid) => {
     if (e.target.id.includes('order-details-btn')) {
       const [, orderId] = e.target.id.split('--');
       console.warn('You clicked order details button', orderId);
-      getFoods(orderId).then((cartList) => {
+      getFoodsOrder(orderId).then((cartList) => {
         showFoods((cartList.length && cartList[0].orderId) || undefined);
       });
     }
