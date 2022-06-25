@@ -1,0 +1,33 @@
+{
+  "payment1" : {
+    "firebaseKey" : "payment1",
+    "type" : "check", 
+    "tip": "$5.00",
+    "uid" : ""
+  },
+  "payment2" : {
+    "firebaseKey" : "payment2",
+    "type" : "credit",
+    "tip" : "$2.50",
+    "uid" : ""
+
+  },
+  "payment3" : {
+    "firebaseKey" : "payment3",
+    "type" : "debit",
+    "tip" : "$10.00",
+    "uid" : ""
+  },
+  "payment4" : {
+    "firebaseKey" : "payment4",
+    "type" : "cash",
+    "tip" : "$6.00",
+    "uid" : ""
+  },
+  "payment5" : {
+    "firebaseKey" : "payment5",
+    "type" : "mobile",
+    "tip" : "$8.00",
+    "uid" : ""
+  }
+}

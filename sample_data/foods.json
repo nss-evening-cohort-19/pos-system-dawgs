@@ -1,0 +1,38 @@
+{
+  "-MiBsfuTafbEQ7eAULxV" : {
+    "name" : "pizza",
+    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+    "price" : "$10.00",
+    "orderId": "",
+    "uid": ""
+  },
+  "-MiBt86VzkC-EGmJnxjm" : {
+    "name" : "wings",
+    "firebaseKey" : "-MiBt86VzkC-EGmJnxjm",
+    "price" : "$8.00",
+    "orderId": "",
+    "uid": ""
+  },
+  "-MiBtwf1BwN9pGavQeR3" : {
+    "name" : "cake",
+    "firebaseKey" : "-MiBtwf1BwN9pGavQeR3",
+    "price" : "$9.00",
+    "orderId": "",
+    "uid": ""
+  },
+  "-MiBuOfHv9NCKB_cneij" : {
+    "name" : "shrimp",
+    "firebaseKey" : "-MiBuOfHv9NCKB_cneij",
+    "price" : "$8.00",
+    "orderId": "",
+    "uid": ""
+  },
+  "-MiBulenBnY8by9Xn7q1" : {
+    "name" : "hamburger",
+    "firebaseKey" : "-MiBulenBnY8by9Xn7q1",
+    "price" : "$11.00",
+    "orderId": "",
+    "uid": ""
+  }
+    
+}

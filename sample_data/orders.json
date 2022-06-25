@@ -1,0 +1,83 @@
+{
+  "-MiBsBKGWFEU-yluJkL-": {
+    "name": "Bob",
+    "firebaseKey": "-MiBsBKGWFEU-yluJkL-",
+    "status": "Open",
+    "phone": "123-456-7890",
+    "email": "bob@email.com",
+    "type": "closed",
+    "uid": ""
+  },
+  "-MiBsknNSQ6aBG1-2lQS": {
+    "name": "Todd",
+    "firebaseKey": "-MiBsknNSQ6aBG1-2lQS",
+    "status": "Open",
+    "phone": "123-456-1346",
+    "email": "todd@email.com",
+    "type": "in-person",
+    "uid": ""
+  },
+  "-MiBuCve4-r_H-RLUOh2": {
+    "name": "Bethany",
+    "firebaseKey": "-MiBuCve4-r_H-RLUOh2",
+    "status": "Open",
+    "phone": "123-456-3865",
+    "email": "bethany@email.com",
+    "type": "phone",
+    "uid": ""
+  },
+  "-MiBuU13EaKmGOMjJF-X": {
+    "name": "Chad",
+    "firebaseKey": "-MiBuU13EaKmGOMjJF-X",
+    "status": "Open",
+    "phone": "123-456-5897",
+    "email": "chad@email.com",
+    "type": "phone",
+    "uid": ""
+  },
+  "-MiBuqoYjFwbXyA8oiiw": {
+    "name": "Sam",
+    "firebaseKey": "-MiBuqoYjFwbXyA8oiiw",
+    "status": "closed",
+    "phone": "123-456-7886",
+    "email": "sam@email.com",
+    "type": "in-person",
+    "uid": ""
+  },
+  "-MiBvEFJTI3FmTzDu_3V": {
+    "name": "Alex",
+    "firebaseKey": "-MiBvEFJTI3FmTzDu_3V",
+    "status": "Closed",
+    "phone": "123-456-8796",
+    "email": "alex@email.com",
+    "type": "phone",
+    "uid": ""
+  },
+  "-MiBvW8ME_DvO2GzwQ8D": {
+    "name": "Andrew",
+    "firebaseKey": "-MiBvW8ME_DvO2GzwQ8D",
+    "status": "Open",
+    "phone": "123-456-4141",
+    "email": "andrew@email.com",
+    "type": "in-person",
+    "uid": ""
+  },
+  "-MiBvf3bIyooE6x4nLLB": {
+    "name": "Tiffany",
+    "firebaseKey": "-MiBvf3bIyooE6x4nLLB",
+    "status": "Open",
+    "phone": "123-456-7613",
+    "email": "tiffany@email.com",
+    "type": "in-person",
+    "uid": ""
+  },
+  "-MiBwAF5wOY00AYJm7cR": {
+    "name": "Kat",
+    "firebaseKey": "-MiBwAF5wOY00AYJm7cR",
+    "status": "Open",
+    "phone": "123-456-0987",
+    "email": "Kat@email.com",
+    "type": "phone",
+    "uid": ""
+  }
+}
