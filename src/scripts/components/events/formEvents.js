@@ -1,4 +1,5 @@
 import { createFood, updateFood } from '../../../api/foodData';
+// import viewOrderDetails from '../../../api/mergedData';
 import { createOrder, getOrders, updateOrder } from '../../../api/orderData';
 import addFood from '../forms/foodForm';
 import { orderCardsOnDom } from '../pages/allOrders';
@@ -50,7 +51,6 @@ const formEvents = (uid) => {
       };
       createFood(foodObj).then(() => showFoods(orderId));
       console.warn(foodObj);
-    //   createFood(foodObj).then(() => viewOrderDetails(foodObj.orderId).then((orderObj) => viewCart(orderObj)));
     }
     // UPDATE Food form
     if (e.target.id.includes('update-item')) {

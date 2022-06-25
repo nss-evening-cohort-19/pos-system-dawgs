@@ -1,10 +1,10 @@
 import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
-const addFood = (orderId, obj = {}) => {
+const addFood = (obj = {}, orderId) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : `submit-item--${orderId}`}" class="mb-4">
+  <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}--${orderId}` : `submit-item--${orderId}`}" class="mb-4">
   <div class="mb-3">
     <label for="" class="form-label">Item Name</label>
     <input type="text" class="form-control" id="name" placeholder="Item Name" value="${obj.name || ''}" required>

@@ -45,27 +45,28 @@ const domEvents = (uid) => {
 
       createOrder(newOrder).then(orderCardsOnDom);
     }
-    // DETAILS
+    // DETAILS on Order
     if (e.target.id.includes('order-details-btn')) {
       console.warn('You clicked order details button');
-      const [, orderFirebaseKey] = e.target.id.split('--');
-      getFood(orderFirebaseKey).then((cartList) => {
-        showFoods(cartList);
+      const [, firebaseKey] = e.target.id.split('--');
+      getFood(firebaseKey).then((cartList) => {
+        showFoods(cartList.firebaseKey);
       });
     }
 
-    // EDIT
+    // EDIT Order
     if (e.target.id.includes('update-order-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => orderFormOnDom(orderObj));
     }
 
-    // DELETE
+    // DELETE Order
     if (e.target.id.includes('delete-order-btn')) {
       console.warn('Button clicked');
       const [, firebaseKey] = e.target.id.split('--');
       deleteOrder(firebaseKey, uid).then((orderArray) => orderCardsOnDom(orderArray));
     }
+    // DELETE Food
     if (e.target.id.includes('delete-food')) {
       console.warn('hello');
       // eslint-disable-next-line no-alert
@@ -74,11 +75,13 @@ const domEvents = (uid) => {
         deleteFood(firebaseKey, orderId).then(() => showFoods(orderId));
       }
     }
+    // EDIT Food
     if (e.target.id.includes('update-food')) {
       console.warn('hello');
       const [, firebaseKey, orderId] = e.target.id.split('--');
       getSingleFood(firebaseKey).then((foodObj) => addFood(foodObj, orderId));
     }
+    // ADD Food
     if (e.target.id.includes('addItemBtn')) {
       console.warn('holla');
       const [, orderId] = e.target.id.split('--');

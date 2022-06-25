@@ -1,8 +1,8 @@
 import navEvents from '../../components/events/navEvents';
-// import addFood from '../../components/forms/foodForm';
+import addFood from '../../components/forms/foodForm';
 import logoutButton from '../../components/logoutButton';
 // import { showFoods } from '../../components/pages/food';
-// import paymentForm from '../../components/forms/paymentForm';
+import paymentForm from '../../components/forms/paymentForm';
 import orderFormOnDom from '../../components/forms/orderForm';
 // import { viewCart, emptyCart } from '../../components/pages/cart';
 // import { orderCardsOnDom } from '../../components/pages/allOrders';
@@ -19,9 +19,9 @@ import formEvents from '../../components/events/formEvents';
 const startApp = (user) => {
   domBuilder();
   navBar();
-  // addFood();
+  addFood();
   orderFormOnDom();
-  // paymentForm();
+  paymentForm();
   // viewCart(user);
   // emptyCart(user);
   homeLoggedIn();
@@ -32,8 +32,8 @@ const startApp = (user) => {
   // orderDomEvents(user.uid);
   // orderFormEvents(user.uid);
   homeLoggedIn(user.uid);
-  formEvents(user.uid);
   domEvents(user.uid);
+  formEvents(user.uid);
   // getFood().then((foodArray) => showFoods(foodArray));
   // getOrders().then((orderArray) => orderCardsOnDom(orderArray));
   // getFood().then((foodArray) => viewCart(foodArray));

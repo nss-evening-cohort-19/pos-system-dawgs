@@ -49,6 +49,12 @@ const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
     })
     .catch((error) => reject(error));
 });
+const getFoodsOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 // CREATE Food
 const createFood = (foodObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/foods.json`, foodObj)
@@ -56,7 +62,7 @@ const createFood = (foodObj) => new Promise((resolve, reject) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/foods/${response.data.name}.json`, payload)
         .then(() => {
-          getFood(foodObj.orderId).then(resolve);
+          getFoodsOrder(foodObj.orderId).then(resolve);
         });
     }).catch(reject);
 });
@@ -68,4 +74,5 @@ export {
   createFood,
   deleteFood,
   getSingleFood,
+  getFoodsOrder
 };
