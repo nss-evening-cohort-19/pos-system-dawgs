@@ -1,3 +1,4 @@
+import { getOrderItems } from '../../../api/orderData';
 import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
@@ -7,12 +8,13 @@ const emptyCart = () => {
   renderToDom('#card-container', domString);
 };
 
-const viewCart = (array) => {
+const viewCart = (orderId) => {
   clearDom();
-  if (array.length) {
-    let domString = '';
-    array.forEach((item) => {
-      domString += `
+  let domString = '';
+  getOrderItems(orderId).then((array) => {
+    if (array.length) {
+      array.forEach((item) => {
+        domString += `
        <div class="card" style="width: 18rem;">
          <div class="card-body">
           <h5 class="card-title">${item.name}</h5>
@@ -22,17 +24,18 @@ const viewCart = (array) => {
           </div>
          </div>
       `;
-    });
-    renderToDom('#card-container', domString);
-  } else {
-    emptyCart();
-  }
+      });
+      renderToDom('#card-container', domString);
+    } else {
+      emptyCart();
+    }
 
-  const buttonString = `
-    <button type="button" id="add-item-btn" class="btn btn-success">Add Item</button>
+    const buttonString = `
+    <button type="button" id="add-item-btn--${orderId}" class="btn btn-success">Add Item</button>
     <button type="button" id="payment-btn" class="btn btn-primary">Go To Payment</button>
   `;
-  renderToDom('#buttons-container', buttonString);
+    renderToDom('#buttons-container', buttonString);
+  });
 };
 
 export { viewCart, emptyCart };
