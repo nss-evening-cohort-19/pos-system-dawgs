@@ -23,6 +23,7 @@ const startApp = (user) => {
   // emptyCart(user);
   logoutButton(user.uid);
   navEvents(user.uid);
+  // cartEvents(user.uid);
   // foodDomEvents(user.uid);
   // foodFormEvents(user.uid);
   // orderDomEvents(user.uid);

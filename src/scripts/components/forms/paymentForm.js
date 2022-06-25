@@ -1,8 +1,8 @@
-// import clearDom from '../../helpers/utilities/clearDom';
+import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const paymentForm = (obj = {}) => {
-  // clearDom();
+  clearDom();
   const domString = `
   <form id="payment-types">
   <select class="form-select" aria-label="Default select example">
@@ -16,7 +16,7 @@ const paymentForm = (obj = {}) => {
       <input type="text" placeholder="Tip Amount" class="form-control" value="${obj.tip || ''}">
     </div>
   </select>
-  <button type="submit" class="btn btn-success">Close Order
+  <button type="submit" id="close-order-btn" class="btn btn-success">Close Order
     </button>
   </form>
   `;
