@@ -1,7 +1,7 @@
 import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
-const addFood = (orderId, obj = {}) => {
+const addFood = (obj = {}, orderId) => {
   clearDom();
   const domString = `
   <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}--${orderId}` : `submit-item--${orderId}`}" class="mb-4">
@@ -15,7 +15,7 @@ const addFood = (orderId, obj = {}) => {
     <label for="" class="form-label">Item Price</label>
     <input type="text" class="form-control" id="price" placeholder="Item Price" value="${obj.price || ''}"  required>
   </div>
-  <button type="submit" class="btn btn-primary">${obj.firebaseKey ? 'update item' : 'submit item'}</button>
+  <button id="food-submit-btn" type="submit" class="btn btn-primary">${obj.firebaseKey ? 'Update Item' : 'Submit Item'}</button>
 </form>`;
   renderToDom('#form-container', domString);
 };
