@@ -47,7 +47,7 @@ const formEvents = (uid) => {
       const foodObj = {
         name: document.querySelector('#name').value,
         price: document.querySelector('#price').value,
-        orderId
+        orderId,
       };
       createFood(foodObj).then(() => showFoods(orderId));
       console.warn(foodObj);

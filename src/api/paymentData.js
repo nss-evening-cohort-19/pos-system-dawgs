@@ -49,8 +49,8 @@ const updatePayment = (paymentObj) => new Promise((resolve, reject) => {
 });
 
 // GET TOTAL REVENUE
-const getTotalRevenue = () => new Promise((resolve, reject) => {
-  getOrders()
+const getTotalRevenue = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const reducer = (taco, currentValue) => taco + parseFloat(currentValue.orderTotal ? currentValue.orderTotal : 0);
       const orderTotal = (ordersArray.reduce(reducer, 0));
@@ -62,7 +62,7 @@ const getTotalRevenue = () => new Promise((resolve, reject) => {
       console.warn(totalTips);
       const totalRev = Math.round(orderTotal + totalTips);
       // eslint-disable-next-line no-console
-      console.log('totalRev ===', totalRev, ordersArray);
+      console.log('totalRev ===', uid, totalRev, ordersArray);
       resolve(totalRev);
     }).catch(reject);
 });

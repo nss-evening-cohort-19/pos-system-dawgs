@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { getOrders } from '../../../api/orderData';
-=======
 import { deleteFood, getFood, getSingleFood } from '../../../api/foodData';
 import {
   createOrder,
@@ -9,7 +6,6 @@ import {
   getSingleOrder
 } from '../../../api/orderData';
 import addFood from '../forms/foodForm';
->>>>>>> main
 // import addFood from '../forms/foodForm';
 import orderFormOnDom from '../forms/orderForm';
 import { orderCardsOnDom } from '../pages/allOrders';
@@ -27,7 +23,7 @@ const domEvents = (uid) => {
 
     // EVENT TO VIEW REVENUE
     if (e.target.id.includes('view-revenue')) {
-      viewRevenue();
+      viewRevenue(uid);
     }
 
     // CLICK EVENT TO SHOW NEW ORDER FORM
@@ -35,8 +31,6 @@ const domEvents = (uid) => {
       orderFormOnDom(uid);
     }
 
-<<<<<<< HEAD
-=======
     // CLICK EVENT FOR SUBMIT ORDER
     if (e.target.id.includes('submit-order')) {
       e.preventDefault();
@@ -53,10 +47,10 @@ const domEvents = (uid) => {
     }
     // DETAILS on Order
     if (e.target.id.includes('order-details-btn')) {
-      console.warn('You clicked order details button');
       const [, firebaseKey] = e.target.id.split('--');
+      console.warn('You clicked order details button', firebaseKey);
       getFood(firebaseKey).then((cartList) => {
-        showFoods(cartList.firebaseKey);
+        showFoods((cartList.length && cartList[0].firebaseKey) || undefined);
       });
     }
 
@@ -93,7 +87,6 @@ const domEvents = (uid) => {
       const [, orderId] = e.target.id.split('--');
       addFood({}, orderId);
     }
->>>>>>> main
     /* if (e.target.id.includes('order-details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-console

@@ -5,10 +5,10 @@ import {
 import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
-const viewRevenue = async () => {
+const viewRevenue = async (uid) => {
   clearDom();
   let totalRev = 0;
-  await getTotalRevenue().then((res) => {
+  await getTotalRevenue(uid).then((res) => {
     totalRev = res;
   });
   let totalTips = 0;
