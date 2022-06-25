@@ -21,7 +21,7 @@ const viewOrderRevenue = async (firebaseKey) => {
 const viewOrderDetails = (orderFireBaseKey) => new Promise((resolve, reject) => {
   getSingleFood(orderFireBaseKey)
     .then((obj) => {
-      getOrderItems(obj)
+      getOrderItems(obj.firebaseKey)
         .then((ordersItems) => {
           resolve({ ordersItems, ...obj });
         });

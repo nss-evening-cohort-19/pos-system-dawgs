@@ -2,7 +2,9 @@ import clearDom from '../../helpers/utilities/clearDom';
 import renderToDom from '../../helpers/utilities/renderToDom';
 
 const noOrders = () => {
-  document.querySelector('#add-card').innerHTML = '<h1>No Orders</h1>';
+  // document.querySelector('#add-card').innerHTML = '<h1>No Orders</h1>';
+  const domString = '<h1>No Orders.</h1>';
+  renderToDom('#card-container', domString);
 };
 
 const orderCardsOnDom = (array) => {
