@@ -1,4 +1,4 @@
-import { deleteFood, getFoods, getSingleFood } from '../../../api/foodData';
+import { deleteFood, getFoodsOrder, getSingleFood } from '../../../api/foodData';
 import {
   deleteOrder,
   getOrders,
@@ -50,10 +50,10 @@ const domEvents = (uid) => {
     // }
     // DETAILS on Order
     if (e.target.id.includes('order-details-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      console.warn('You clicked order details button', firebaseKey);
-      getFoods(firebaseKey).then((cartList) => {
-        showFoods((cartList.length && cartList[0].firebaseKey) || undefined);
+      const [, orderId] = e.target.id.split('--');
+      console.warn('You clicked order details button', orderId);
+      getFoodsOrder(orderId).then((cartList) => {
+        showFoods((cartList.length && cartList[0].orderId) || undefined);
       });
     }
 

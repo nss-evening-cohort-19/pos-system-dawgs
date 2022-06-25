@@ -12,27 +12,27 @@ const viewRevenue = async (uid) => {
     totalRev = res;
   });
   let totalTips = 0;
-  await getTotalTips().then((res) => {
+  await getTotalTips(uid).then((res) => {
     totalTips = res;
   });
   let phoneOrders = 0;
-  await getPhoneOrders().then((res) => {
+  await getPhoneOrders(uid).then((res) => {
     phoneOrders = res;
   });
   let inpersonOrders = 0;
-  await getInpersonOrders().then((res) => {
+  await getInpersonOrders(uid).then((res) => {
     inpersonOrders = res;
   });
   let cashOrders = 0;
-  await getCashOrders().then((res) => {
+  await getCashOrders(uid).then((res) => {
     cashOrders = res;
   });
   let creditOrders = 0;
-  await getCreditOrders().then((res) => {
+  await getCreditOrders(uid).then((res) => {
     creditOrders = res;
   });
   let mobileOrders = 0;
-  await getMobileOrders().then((res) => {
+  await getMobileOrders(uid).then((res) => {
     mobileOrders = res;
   });
   const domString = `

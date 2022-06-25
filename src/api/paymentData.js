@@ -68,8 +68,8 @@ const getTotalRevenue = (uid) => new Promise((resolve, reject) => {
 });
 
 // GET TOTAL TIPS
-const getTotalTips = () => new Promise((resolve, reject) => {
-  getOrders()
+const getTotalTips = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const reducer = (taco, currentValue) => taco + parseFloat(currentValue.tipTotal ? currentValue.tipTotal : 0);
       const tipTotal = (ordersArray.reduce(reducer, 0));
@@ -83,8 +83,8 @@ const getTotalTips = () => new Promise((resolve, reject) => {
 // GET ORDER DATES
 
 // GET ORDER BY PHONE
-const getPhoneOrders = () => new Promise((resolve, reject) => {
-  getOrders()
+const getPhoneOrders = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const phoneOrders = ordersArray.filter((order) => order.type === 'Phone');
       // eslint-disable-next-line no-console
@@ -94,8 +94,8 @@ const getPhoneOrders = () => new Promise((resolve, reject) => {
 });
 
 // GET ORDER BY IN PERSON
-const getInpersonOrders = () => new Promise((resolve, reject) => {
-  getOrders()
+const getInpersonOrders = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const inpersonOrders = ordersArray.filter((order) => order.type === 'In-Person');
       // eslint-disable-next-line no-console
@@ -105,8 +105,8 @@ const getInpersonOrders = () => new Promise((resolve, reject) => {
 });
 
 // GET TOTAL CARD ORDERS
-const getCashOrders = () => new Promise((resolve, reject) => {
-  getOrders()
+const getCashOrders = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const cashOrders = ordersArray.filter((order) => order.paymentType === 'cash');
       // eslint-disable-next-line no-console
@@ -116,8 +116,8 @@ const getCashOrders = () => new Promise((resolve, reject) => {
 });
 
 // GET TOTAL CREDIT ORDERS
-const getCreditOrders = () => new Promise((resolve, reject) => {
-  getOrders()
+const getCreditOrders = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const creditOrders = ordersArray.filter((order) => order.paymentType === 'credit');
       // eslint-disable-next-line no-console
@@ -127,8 +127,8 @@ const getCreditOrders = () => new Promise((resolve, reject) => {
 });
 
 // GET TOTAL MOBILE ORDERS
-const getMobileOrders = () => new Promise((resolve, reject) => {
-  getOrders()
+const getMobileOrders = (uid) => new Promise((resolve, reject) => {
+  getOrders(uid)
     .then((ordersArray) => {
       const mobileOrders = ordersArray.filter((order) => order.paymentType === 'mobile');
       // eslint-disable-next-line no-console
