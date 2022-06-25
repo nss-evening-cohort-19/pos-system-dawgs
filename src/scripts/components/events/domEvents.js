@@ -93,7 +93,7 @@ const domEvents = (uid) => {
     // Go To Payment
     if (e.target.id.includes('payment-btn')) {
       console.warn('You clicked the go to payment button.');
-      paymentForm();
+      paymentForm(uid);
       // const [, firebaseKey] = e.target.id.split('--');
       // getSinglePayment(firebaseKey).then((paymentObj) => paymentForm(uid, paymentObj));
     }
