@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { getSingleOrder } from './orderData';
 
 // // VIEW ORDER DETAILS
@@ -12,13 +13,19 @@
 
 // import { getSingleFood } from './foodData';
 import { getOrderItems, getSingleOrder } from './orderData';
+=======
+import { getSingleFood } from './foodData';
+import { getOrderItems } from './orderData';
+import { getPayments } from './paymentData';
+>>>>>>> main
 
-// const viewOrderProfit = async (firebaseKey) => {
-//   const paymentObject = await getPayments(firebaseKey);
-//   return ({
-//     paymentObject
-//   });
-// };
+// ORDER REVENUE
+const viewOrderRevenue = async (firebaseKey) => {
+  const payments = await getPayments(firebaseKey);
+  return ({
+    payments
+  });
+};
 
 // const deleteOrderItems = (orderId) => new Promise((resolve, reject) => {
 //   getItems(orderId).then((orderItemArr) => {
@@ -37,4 +44,4 @@ const viewOrderDetails = (orderFireBaseKey) => new Promise((resolve, reject) => 
         });
     }).catch((error) => reject(error));
 });
-export default viewOrderDetails;
+export default { viewOrderDetails, viewOrderRevenue };

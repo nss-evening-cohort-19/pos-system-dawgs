@@ -3,10 +3,12 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 // GET Food
-const getFoodOrder = (orderId) => new Promise((resolve, reject) => {
+const getFoodsOrder = (orderId) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
     .then((response) => {
       if (response.data) {
+        // eslint-disable-next-line no-console
+        console.log('response ===', response.data);
         resolve(Object.values(response.data));
       } else {
         resolve([]);
@@ -14,6 +16,7 @@ const getFoodOrder = (orderId) => new Promise((resolve, reject) => {
     })
     .catch((error) => reject(error));
 });
+
 const getFoods = () => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/foods.json`)
     .then((response) => {
@@ -49,35 +52,38 @@ const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
     })
     .catch((error) => reject(error));
 });
-const getFoodsOrder = (orderId) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
-    .then((itemsArr) => {
-      if (itemsArr.data) {
-        resolve(Object.values(itemsArr.data));
-      } else {
-        resolve([]);
-      }
-    }).catch((error) => reject(error));
-});
+// const getFoodsOrder = (orderId) => new Promise((resolve, reject) => {
+//   axios.get(`${dbUrl}/foods.json?orderBy="orderId"&equalTo="${orderId}"`)
+//     .then((itemsArr) => {
+//       if (itemsArr.data) {
+//         resolve(Object.values(itemsArr.data));
+//       } else {
+//         resolve([]);
+//       }
+//     }).catch((error) => reject(error));
+// });
+// const pushId = () => new Promise((resolve, reject) => {
+//   axios.get(`${dbUrl}/foods.json`)
+//   .then
+// })
 
 // CREATE Food
-const createFood = (foodObj) => new Promise((resolve, reject) => {
+const createFood = (foodObj, orderId) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/foods.json`, foodObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/foods/${response.data.name}.json`, payload)
         .then(() => {
-          getFoodsOrder(foodObj.orderId).then(resolve);
+          getFoodsOrder(foodObj, orderId).then(resolve);
         });
     }).catch(reject);
 });
 
 export {
-  getFoodOrder,
+  getFoodsOrder,
   getFoods,
   updateFood,
   createFood,
   deleteFood,
   getSingleFood,
-  getFoodsOrder
 };

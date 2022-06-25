@@ -1,4 +1,4 @@
-import { deleteFood, getFoodOrder, getSingleFood } from '../../../api/foodData';
+import { deleteFood, getFoods, getSingleFood } from '../../../api/foodData';
 import {
   deleteOrder,
   getOrders,
@@ -22,7 +22,7 @@ const domEvents = (uid) => {
 
     // EVENT TO VIEW REVENUE
     if (e.target.id.includes('view-revenue')) {
-      viewRevenue();
+      viewRevenue(uid);
     }
 
     // CLICK EVENT TO SHOW NEW ORDER FORM
@@ -46,10 +46,10 @@ const domEvents = (uid) => {
     // }
     // DETAILS on Order
     if (e.target.id.includes('order-details-btn')) {
-      console.warn('You clicked order details button');
       const [, firebaseKey] = e.target.id.split('--');
-      getFoodOrder(firebaseKey).then((cartList) => {
-        showFoods(cartList.firebaseKey);
+      console.warn('You clicked order details button', firebaseKey);
+      getFoods(firebaseKey).then((cartList) => {
+        showFoods((cartList.length && cartList[0].firebaseKey) || undefined);
       });
     }
 

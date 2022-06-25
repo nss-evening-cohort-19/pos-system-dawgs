@@ -31,14 +31,14 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// CREATE Order
-const createOrder = (orderObj, uid) => new Promise((resolve, reject) => {
+const createOrder = (orderObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/orders.json`, orderObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orders/${response.data.name}.json`, payload)
         .then(() => {
-          getOrders(uid).then((ordersArray) => resolve(ordersArray));
+          console.warn(payload.firebaseKey, 'create order');
+          resolve(payload.firebaseKey);
         });
     })
     .catch((error) => reject(error));
