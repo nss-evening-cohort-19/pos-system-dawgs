@@ -3,7 +3,7 @@
 import axios from 'axios';
 import firebaseConfig from './apiKeys';
 
-const dbUrl = firebaseConfig.database.URL;
+const dbUrl = firebaseConfig.databaseURL;
 
 // GET PAYMENTS
 const getPayments = () => new Promise((resolve, reject) => {

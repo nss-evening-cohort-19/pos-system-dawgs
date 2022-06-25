@@ -2,6 +2,8 @@ import { deleteFood, getSingleFood } from '../../../api/foodData';
 import { showFoods } from '../pages/food';
 import addFood from '../forms/foodForm';
 import { viewCart } from '../pages/cart';
+import paymentForm from '../forms/paymentForm';
+import { getSinglePayment } from '../../../api/paymentData';
 
 // DELETE CART ITEM
 const cartEvents = (uid) => {
@@ -36,7 +38,7 @@ const cartEvents = (uid) => {
         name: document.querySelector('#name').value,
         price: document.querySelector('#price').value,
         // firebaseKey,
-        uid
+        // uid
       };
       addFood(cartObj).then((cartArray) => viewCart(cartArray));
     }
@@ -44,6 +46,8 @@ const cartEvents = (uid) => {
     // GO TO PAYMENT
     if (e.target.id.includes('payment-btn')) {
       console.warn('You clicked the go to payment button.');
+      const [, firebaseKey] = e.target.id.split('--');
+      getSinglePayment(firebaseKey).then((cartObj) => paymentForm(cartObj));
     }
   });
 };
