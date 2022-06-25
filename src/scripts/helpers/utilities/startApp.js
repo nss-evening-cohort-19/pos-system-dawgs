@@ -11,6 +11,7 @@ import navBar from '../../components/pages/navBar';
 import domBuilder from '../domBuilder';
 import domEvents from '../../components/events/domEvents';
 import formEvents from '../../components/events/formEvents';
+// import cartEvents from '../../components/events/cartEvents';
 // import { orderDomEvents, orderFormEvents } from '../../components/events/orderEvents';
 // import { foodFormEvents, foodDomEvents } from '../../components/events/foodEvents';
 // import { getOrders } from '../../../api/orderData';
@@ -27,6 +28,7 @@ const startApp = (user) => {
   homeLoggedIn();
   logoutButton();
   navEvents(user.uid);
+  // cartEvents(user.uid);
   // foodDomEvents(user.uid);
   // foodFormEvents(user.uid);
   // orderDomEvents(user.uid);

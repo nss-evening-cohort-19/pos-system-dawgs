@@ -3,7 +3,7 @@ import { showFoods } from '../pages/food';
 import addFood from '../forms/foodForm';
 // import { viewCart } from '../pages/cart';
 // import paymentForm from '../forms/paymentForm';
-import { getSinglePayment } from '../../../api/paymentData';
+// import { getSinglePayment } from '../../../api/paymentData';
 
 // DELETE CART ITEM
 const cartEvents = (uid) => {
@@ -48,8 +48,9 @@ const cartEvents = (uid) => {
     // eslint-disable-next-line padded-blocks
     // GO TO PAYMENT
     if (e.target.id.includes('payment-btn')) {
-      console.warn('You clicked the go to payment button.');
-      getSinglePayment();
+      console.warn('You clicked the go to payment button.', e.target.id);
+      // const [, firebaseKey] = e.target.id.split('--');
+      // getSinglePayment(firebaseKey).then((paymentObj) => paymentForm(uid, paymentObj));
     }
   });
 };

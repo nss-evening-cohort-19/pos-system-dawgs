@@ -8,11 +8,14 @@ import {
 import addFood from '../forms/foodForm';
 // import addFood from '../forms/foodForm';
 import orderFormOnDom from '../forms/orderForm';
+// import paymentForm from '../forms/paymentForm';
 import { orderCardsOnDom } from '../pages/allOrders';
 import { showFoods } from '../pages/food';
 import viewRevenue from '../pages/revenue';
 // import { getSingleFood } from '../../../api/foodData';
 // import { viewCart } from '../pages/cart';
+// import { getSinglePayment } from '../../../api/paymentData';
+import paymentForm from '../forms/paymentForm';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -86,6 +89,13 @@ const domEvents = (uid) => {
       console.warn('holla');
       const [, orderId] = e.target.id.split('--');
       addFood({}, orderId);
+    }
+    // Go To Payment
+    if (e.target.id.includes('payment-btn')) {
+      console.warn('You clicked the go to payment button.');
+      paymentForm();
+      // const [, firebaseKey] = e.target.id.split('--');
+      // getSinglePayment(firebaseKey).then((paymentObj) => paymentForm(uid, paymentObj));
     }
     /* if (e.target.id.includes('order-details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
