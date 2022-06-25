@@ -16,6 +16,7 @@ import viewRevenue from '../pages/revenue';
 // import { viewCart } from '../pages/cart';
 // import { getSinglePayment } from '../../../api/paymentData';
 import paymentForm from '../forms/paymentForm';
+import homeLoggedIn from '../pages/homeLoggedIn';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -90,13 +91,20 @@ const domEvents = (uid) => {
       const [, orderId] = e.target.id.split('--');
       addFood({}, orderId);
     }
-    // Go To Payment
+
+    // GO TO Payment
     if (e.target.id.includes('payment-btn')) {
       console.warn('You clicked the go to payment button.');
       paymentForm(uid);
-      // const [, firebaseKey] = e.target.id.split('--');
-      // getSinglePayment(firebaseKey).then((paymentObj) => paymentForm(uid, paymentObj));
     }
+
+    // CLOSE Order Form
+    if (e.target.id.includes('close-order-btn')) {
+      console.warn('You clicked close order button.');
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then(() => homeLoggedIn());
+    }
+
     /* if (e.target.id.includes('order-details-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       // eslint-disable-next-line no-console
